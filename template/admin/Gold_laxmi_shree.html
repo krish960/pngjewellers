@@ -1,0 +1,78 @@
+{% include 'admin/Navbar.html' %}
+<div class="container my-5">
+ <h2 class="text-center mb-4 text-primary">Add Gold_laxmi_shree Card</h2>
+ <form action="/admin/Save_Gold_laxmi_shree/" method="post" enctype="multipart/form-data"
+  class="border p-4 shadow-lg rounded bg-light">
+  {% csrf_token %}
+  <!-- Row 1: Image and Description -->
+  <div class="row g-4 mt-3">
+   <div class="col-md-6">
+    <label for="Arrival_goldjewellery_image" class="form-label fw-semibold">Upload Image</label>
+    <input type="file" id="Arrival_goldjewellery_image" name="Gold_laxmi_image" class="form-control" accept="image/*"
+     required>
+   </div>
+   <div class="col-md-6">
+    <label for="image_Description" class="form-label fw-semibold">Image Description</label>
+    <input type="text" id="image_Description" name="Gold_laxmi_Description" class="form-control"
+     placeholder="Enter the image description" required>
+   </div>
+  </div>
+
+  <!-- Row 2: Latest Price and Old Price -->
+  <div class="row g-4 mt-3">
+   <div class="col-md-6">
+    <label for="latestPrice" class="form-label fw-semibold">Latest Price</label>
+    <input type="number" id="latestPrice" name="Gold_laxmi_Latest_price" class="form-control"
+     placeholder="Enter the latest price" step="0.01" required>
+   </div>
+
+  </div>
+
+  <!-- Submit Button -->
+  <div class="text-center mt-4">
+   <button type="submit" class="btn btn-success px-5 py-2 shadow">Submit</button>
+  </div>
+ </form>
+
+ <!-- Cards Section -->
+ <div class="mt-5 p-4 bg-white rounded shadow-lg">
+  <h3 class="text-success mb-4 text-center">All Cards and Details</h3>
+  <div class="table-responsive">
+   <table class="table table-hover border">
+    <thead class="bg-dark text-white">
+     <tr>
+      <th scope="col">#</th>
+      <th scope="col">Delete</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Description</th>
+      <th scope="col">Latest Price</th>
+      <th scope="col">Image</th>
+     </tr>
+    </thead>
+    <tbody>
+     {% for i in save_Gold_laxmi %}
+     <tr>
+      <td>{{ forloop.counter }}</td>
+      <td>
+       <a href="/admin/delete_card_Gold_laxmi/?id={{ i.id }}" onclick="return confirm('Are you sure?')">
+        <i class="bi bi-trash fs-5 text-danger"></i>
+       </a>
+      </td>
+      <td>
+       <a href="/admin/edit_Gold_laxmi/?id={{ i.id }}">
+        <i class="bi bi-pencil-square fs-5 text-success"></i>
+       </a>
+      </td>
+      <td>{{ i.Gold_laxmi_Description }}</td>
+      <td>${{ i.Gold_laxmi_Latest_price }}</td>
+      <td>
+       <img src="/{{ i.Gold_laxmi_image }}" alt="Banner Image" width="100px" height="60px" class="img-thumbnail">
+      </td>
+     </tr>
+     {% endfor %}
+    </tbody>
+   </table>
+  </div>
+ </div>
+</div>
+{% include 'admin/Footer.html' %}

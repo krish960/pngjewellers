@@ -1,0 +1,105 @@
+{% include 'admin/Navbar.html' %}
+
+<div class="container my-5">
+ <!-- Page Header -->
+ <div class="text-center mb-5">
+  <h2 class="text-gradient fw-bold"
+   style="background: linear-gradient(to right, #ff512f, #dd2476); -webkit-background-clip: text; color: transparent;">
+   Gold Drops Danglers Wear
+  </h2>
+  <p class="text-muted">Manage your gold Drops Danglers products efficiently</p>
+ </div>
+
+ <!-- Product Form -->
+ <div class="card shadow-lg border-0 rounded-4 mb-5">
+  <div class="card-body p-4">
+   <h4 class="card-title text-center text-primary mb-4 fw-bold">Add New Product</h4>
+   <form action="/admin/Gold_DropsDanglers_wear_save/" method="post" enctype="multipart/form-data" class="row g-4">
+    {% csrf_token %}
+
+    <!-- Product Image -->
+    <div class="col-md-6">
+     <label for="productImage" class="form-label fw-bold">Product Image</label>
+     <input type="file" class="form-control shadow-sm border-secondary rounded" id="productImage" name="productImage"
+      accept="image/*" required>
+    </div>
+
+    <!-- Product Title -->
+    <div class="col-md-6">
+     <label for="productTitle" class="form-label fw-bold">Product Title</label>
+     <input type="text" class="form-control shadow-sm border-secondary rounded" id="productTitle" name="productTitle"
+      placeholder="Enter product title" required>
+    </div>
+
+    <!-- Latest Price -->
+    <div class="col-md-6">
+     <label for="latestPrice" class="form-label fw-bold">Latest Price</label>
+     <input type="number" class="form-control shadow-sm border-secondary rounded" id="latestPrice" name="latestPrice"
+      placeholder="Enter latest price" required>
+    </div>
+
+    <!-- Old Price -->
+    <div class="col-md-6">
+     <label for="oldPrice" class="form-label fw-bold">Old Price</label>
+     <input type="number" class="form-control shadow-sm border-secondary rounded" id="oldPrice" name="oldPrice"
+      placeholder="Enter old price">
+    </div>
+
+    <!-- Submit Button -->
+    <div class="col-12 text-center">
+     <button type="submit" class="btn btn-lg px-5 py-2 shadow-sm rounded-pill"
+      style="background: linear-gradient(to right, #00b09b, #96c93d); color: white;">Add Product</button>
+    </div>
+   </form>
+  </div>
+ </div>
+
+ <!-- Product Details Table -->
+ <div class="card shadow-lg border-0 rounded-4">
+  <div class="card-body p-4">
+   <h4 class="card-title text-center text-primary mb-4 fw-bold">Product Details</h4>
+   <div class="table-responsive">
+    <table class="table table-bordered table-hover align-middle text-center">
+     <thead class="table-primary text-secondary">
+      <tr>
+       <th>#</th>
+       <th>Delete</th>
+       <th>Edit</th>
+       <th>Title</th>
+       <th>Latest Price</th>
+       <th>Old Price</th>
+       <th>Image</th>
+      </tr>
+     </thead>
+     <tbody>
+      {% for i in data %}
+      <tr>
+       <td>{{ forloop.counter }}</td>
+       <td>
+        <a href="/admin/delete_Gold_Drops_dang_wear/?id={{ i.id }}" onclick="return confirm('Are you sure..?')"
+         class="text-danger">
+         <i class="bi bi-trash-fill fs-5"></i>
+        </a>
+       </td>
+       <td>
+        <a href="/admin/Edit_Gold_Drops_dang_wear/?id={{ i.id }}" class="text-success">
+         <i class="bi bi-pencil-fill fs-5"></i>
+        </a>
+       </td>
+       <td>{{ i.productTitle }}</td>
+       <td>{{ i.latestPrice }}</td>
+       <td>{{ i.oldPrice }}</td>
+       <td>
+        <img src="/{{ i.productImage }}" alt="Product Image" class="img-fluid rounded shadow-sm"
+         style="max-width: 100px; height: auto;">
+       </td>
+      </tr>
+      {% endfor %}
+     </tbody>
+    </table>
+   </div>
+  </div>
+ </div>
+</div>
+
+{% include 'admin/Footer.html' %}

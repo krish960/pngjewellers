@@ -1,0 +1,39 @@
+{% include 'admin/Navbar.html' %}
+
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 col-md-8 col-sm-12">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title text-center mb-4">Edit Product Details</h5>
+
+          <form action="/admin/update_Slider/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="hidden" name="id" value="{{ old_Data.id }}">
+
+            <div class="mb-3">
+              <label for="cardImage" class="form-label">Current Image</label>
+              <div class="mb-2">
+                <img src="{{ old_Data.image_index_Slider.url }}" alt="Current Image" class="img-thumbnail"
+                  style="max-width: 150px;">
+              </div>
+              <label for="cardImage" class="form-label">Select New Image</label>
+              <input type="file" class="form-control" id="cardImage" name="image_index_Slider" accept="image/*" required>
+            </div>
+
+            
+
+            
+
+            <!-- Submit Button -->
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include 'admin/Footer.html' %}

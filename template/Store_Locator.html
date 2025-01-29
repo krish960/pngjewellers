@@ -1,0 +1,187 @@
+{% include "nav.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Nearest PNG Store</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .map-container {
+      height: 400px;
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .store-details {
+      border-radius: 8px;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .store-details img {
+      width: 80px;
+      height: auto;
+    }
+    .custom-dropdown {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <img src="https://www.pngjewellers.com/images/store-web-banner.jpg" class="img-fluid" alt="Franchise Image">
+    </div>
+  </div>
+</div>
+
+<div class="custom-hr">
+  <div class="line"></div>
+  <div class="center-logo">
+    <img 
+      src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS4q3a7SokAsnb4OjvSs9xOaCUZyg0HC5nWqBEaN-6Xhj7yYMFK" 
+      alt="Logo" 
+      class="img-fluid"
+    >
+  </div>
+  <div class="line"></div>
+</div>
+
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">Find your Nearest P. N. Gadgil Jewellery</h1>
+
+    <div class="row mb-3">
+      <div class="col-12">
+        <div class="custom-dropdown">
+          <label for="citySelect" class="form-label">Stores in India</label>
+          <select id="citySelect" class="form-select">
+            <option value="" disabled selected>Select a city</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Pune" selected>Pune</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Shevgaon">Shevgaon</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6 col-12">
+        <div id="storeDetails" class="store-details">
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-12">
+        <div id="map" class="map-container"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+ 
+  <script>
+    const storeData = {
+      Mumbai: [
+        {
+          name: "P N Gadgil Jewellers Limited (Dombivli)",
+          address: "Shop No. 3/4, Prerna Apartment Building, Tilak Road, Dombivli, Mumbai, Maharashtra",
+          lat: 19.2183,
+          lng: 73.0869,
+          image: "https://png-devs3.s3.ap-south-1.amazonaws.com/png_franchise_785d18df1c.png"
+        },
+        {
+          name: "P N Gadgil Jewellers Limited (Bhandup)",
+          address: "Shop No. 0-G and Office No. F-102, Bhandup West, Mumbai, Maharashtra",
+          lat: 19.1445,
+          lng: 72.9277,
+          image: "https://png-devs3.s3.ap-south-1.amazonaws.com/Group_47043_746cacc3b7.png"
+        }
+      ],
+      Pune: [
+        {
+          name: "P N Gadgil Jewellers Limited (Camp)",
+          address: "MG Road, Camp, Pune, Maharashtra",
+          lat: 18.5167,
+          lng: 73.8563,
+          image: "https://png-devs3.s3.ap-south-1.amazonaws.com/Group_47038_57040aaa3b.png"
+        }
+      ],
+      Delhi: [
+        {
+          name: "P N Gadgil Jewellers Limited (Connaught Place)",
+          address: "Shop No. 1, Connaught Place, New Delhi, Delhi",
+          lat: 28.6358,
+          lng: 77.2245,
+          image: "https://png-devs3.s3.ap-south-1.amazonaws.com/Group_47043_746cacc3b7.png"
+        }
+      ],
+       Shevgaon: [
+        {
+          name: "P N Gadgil Jewellers Limited (Connaught Place)",
+          address: "Shop No. 1, Connaught Place, New Delhi, Delhi",
+          lat: 28.6358,
+          lng: 77.2245,
+          image: "https://png-devs3.s3.ap-south-1.amazonaws.com/Group_47043_746cacc3b7.png"
+        }
+      ]
+    };
+
+    let map;
+    const markers = [];
+
+    function initMap() {
+      map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: 20.5937, lng: 78.9629 },
+        zoom: 5 
+      });
+
+      // Trigger change event for Pune on page load to show data
+      const citySelect = document.getElementById("citySelect");
+      citySelect.value = "Pune";
+      const event = new Event("change");
+      citySelect.dispatchEvent(event);
+    }
+
+    document.getElementById("citySelect").addEventListener("change", (event) => {
+      const city = event.target.value;
+      const storeDetailsContainer = document.getElementById("storeDetails");
+
+      storeDetailsContainer.innerHTML = "";
+      markers.forEach(marker => marker.setMap(null));
+      markers.length = 0; 
+
+      if (city && storeData[city]) {
+        storeData[city].forEach(store => {
+          const storeHTML = `
+            <div class="mb-4">
+              <img src="${store.image}" alt="${store.name}" class="me-3">
+              <h5 class="d-inline-block">${store.name}</h5>
+              <p>${store.address}</p>
+            </div>
+          `;
+          storeDetailsContainer.innerHTML += storeHTML;
+
+          const marker = new google.maps.Marker({
+            position: { lat: store.lat, lng: store.lng },
+            map: map,
+            title: store.name
+          });
+          markers.push(marker);
+        });
+
+        const bounds = new google.maps.LatLngBounds();
+        storeData[city].forEach(store => bounds.extend({ lat: store.lat, lng: store.lng }));
+        map.fitBounds(bounds);
+      }
+    });
+
+    window.onload = initMap;
+  </script>
+</body>
+</html>
+
+{% include "footer.html" %}

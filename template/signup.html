@@ -1,0 +1,68 @@
+{% include "nav.html" %}
+
+<div class="container-fluid d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+  <div class="row w-100">
+    <div class="col-md-6 col-12 mx-auto">
+      <h1 class="text-center mt-5 mb-4">Sign Up with PNG Jewellers</h1>
+      <div class="custom-hr">
+  <div class="line"></div>
+  <div class="center-logo">
+    <img 
+      src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS4q3a7SokAsnb4OjvSs9xOaCUZyg0HC5nWqBEaN-6Xhj7yYMFK" 
+      alt="Logo" 
+      class="img-fluid"
+    >
+  </div>
+  <div class="line"></div>
+</div>
+      <form>
+        <div class="mb-3">
+          <label for="firstName" class="form-label">First Name *</label>
+          <input type="text" class="form-control" id="firstName" placeholder="Enter your first name" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="lastName" class="form-label">Last Name *</label>
+          <input type="text" class="form-control" id="lastName" placeholder="Enter your last name" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Email Address *</label>
+          <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Password *</label>
+          <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="confirmPassword" class="form-label">Confirm Password *</label>
+          <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="mobileNumber" class="form-label">Enter Mobile Number *</label>
+          <input type="text" class="form-control" id="mobileNumber" placeholder="Enter your mobile number" required>
+        </div>
+
+        <div class="mb-3">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="terms" required>
+            <label class="form-check-label" for="terms">
+              I Agree to the <a href="#" class="text-decoration-none">Terms and Conditions</a> and <a href="#" class="text-decoration-none">Privacy Policy</a>
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 mb-3">Sign Up Now</button>
+
+        <div class="text-center">
+          <p>Already have an account? <a href="/login" class="text-decoration-none">Login now</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% include "footer.html" %}

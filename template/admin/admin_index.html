@@ -1,0 +1,155 @@
+{% include 'admin/Navbar.html' %}
+
+<style>
+ body {
+  background-color: #f9f9f9;
+  font-family: 'Arial', sans-serif;
+ }
+
+ .welcome-section {
+  margin-top: 50px;
+ }
+
+ .welcome-card {
+  border-radius: 20px;
+  background: linear-gradient(135deg, #ffc107, #ff8c00);
+  color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  text-align: center;
+  margin-bottom: 30px;
+ }
+
+ .admin-profile img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid white;
+  margin-bottom: 20px;
+ }
+
+ h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+ }
+
+ p.lead {
+  font-size: 1.25rem;
+  color: #fff;
+  font-style: italic;
+ }
+
+ .current-date {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-top: 20px;
+ }
+
+ .action-buttons a {
+  background-color: #ff8c00;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 10px;
+  transition: background-color 0.3s ease;
+ }
+
+ .action-buttons a:hover {
+  background-color: #e07b00;
+ }
+
+ .stat-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
+  margin-top: 20px;
+  transition: transform 0.3s ease;
+ }
+
+ .stat-card:hover {
+  transform: translateY(-5px);
+ }
+
+ .stat-card h3 {
+  font-size: 2rem;
+  color: #333;
+  font-weight: 600;
+ }
+
+ .stat-card p {
+  color: #777;
+  font-size: 1.2rem;
+ }
+
+ /* Add responsive design */
+ @media (max-width: 767px) {
+  .stat-card {
+   margin-top: 15px;
+  }
+ }
+</style>
+
+<div class="container welcome-section">
+ <div class="row">
+  <div class="col-md-12">
+   <!-- Welcome Card -->
+   <div class="card welcome-card text-center">
+    <div class="admin-profile">
+     <img src="https://d1put4x3vjlh9s.cloudfront.net/public/uploads/website/png_logo_1727074242.svg"
+      alt="Admin Profile">
+    </div>
+    <h1>Welcome back, Admin!</h1>
+    <p class="lead">Empowering excellence in jewelry craftsmanship.</p>
+    <p class="current-date" id="currentDate"></p>
+    <div class="action-buttons">
+     <a href="#">Logout</a>
+    </div>
+   </div>
+  </div>
+ </div>
+
+ <!-- Stats Section -->
+ <!-- <div class="row mt-4">
+  <div class="col-md-3">
+   <div class="card stat-card">
+    <h3>150</h3>
+    <p>Total Products</p>
+   </div>
+  </div>
+  <div class="col-md-3">
+   <div class="card stat-card">
+    <h3>320</h3>
+    <p>Total Orders</p>
+   </div>
+  </div>
+  <div class="col-md-3">
+   <div class="card stat-card">
+    <h3>₹5,00,000</h3>
+    <p>Total Revenue</p>
+   </div>
+  </div>
+  <div class="col-md-3">
+   <div class="card stat-card">
+    <h3>12</h3>
+    <p>New Customers</p>
+   </div>
+  </div>
+ </div> -->
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+ // Display the current date
+ const currentDateElement = document.getElementById("currentDate");
+ const options = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
+ currentDateElement.textContent = `Today is ${new Date().toLocaleDateString("en-US", options)}.`;
+</script>
+
+{% include 'admin/Footer.html' %}

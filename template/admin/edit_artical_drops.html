@@ -1,0 +1,30 @@
+{% include 'admin/Navbar.html' %}
+<div class="container py-5">
+ <div class="row justify-content-center">
+  <div class="col-lg-8 col-md-10 col-sm-12">
+   <div class="card shadow-lg border-0">
+    <div class="card-header bg-primary text-white text-center">
+     <h1 class="mb-0">Edit Article</h1>
+    </div>
+    <div class="card-body">
+     <form action="/admin/drops_edit_artical_data/" method="post">
+      {% csrf_token %}
+      <input type="hidden" name="id" value="{{old_Data.id}}">
+      <div class="mb-3">
+       <label for="articleHeading" class="form-label fw-bold">Article Heading</label>
+       <input type="text" class="form-control form-control-lg" id="articleHeading" name="hoops_articleHeading_edit"
+        value="{{old_Data.hoops_articleHeading}}" required>
+      </div>
+      <div class="mb-3">
+       <label for="articleDescription" class="form-label fw-bold">Article Description</label>
+       <textarea class="form-control form-control-lg" id="articleDescription" name="hoops_articleDescription_edit"
+        rows="5" required>{{old_Data.hoops_articleDescription}}</textarea>
+      </div>
+      <button type="submit" class="btn btn-success btn-lg">Update Article</button>
+     </form>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+{% include 'admin/Footer.html' %}

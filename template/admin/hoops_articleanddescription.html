@@ -1,0 +1,64 @@
+{% include 'admin/Navbar.html' %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8 col-md-10 col-sm-12">
+      <a href="/admin/Hoops_and_Huggies/">
+        <button class="btn btn-success m-3">Back</button>
+      </a>
+      <div class="card  border">
+        <div class="card-header text-danger text-center">
+          <h1 class="mb-0">Create Article</h1>
+        </div>
+        <div class="card-body">
+          <form action="/admin/hoops_artica_data/" method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="articleHeading" class="form-label fw-bold">Article Heading</label>
+              <input type="text" class="form-control form-control-lg" id="articleHeading"
+                placeholder="Enter the article heading" name="hoops_articleHeading" required>
+            </div>
+            <div class="mb-3">
+              <label for="articleDescription" class="form-label fw-bold">Article Description</label>
+              <textarea class="form-control form-control-lg" id="articleDescription" rows="5"
+                placeholder="Write your article description here..." name="hoops_articleDescription"
+                required></textarea>
+            </div>
+            <button type="submit" class="btn btn-success btn-lg">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h3 class="m-3 text-danger">All Artical list</h3>
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover">
+      <thead class="table-light">
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">Delete</th>
+          <th scope="col">Edit</th>
+          <th scope="col">Article Heading</th>
+          <th scope="col">Article Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in data %}
+        <tr>
+          <td>{{forloop.counter}}</td>
+          <td>
+            <a href="/admin/delete_artical_hoops/?id={{ i.id }}" onclick="return confirm('Are you sure..?')">
+              <i class="bi bi-trash fs-3 text-danger"></i>
+            </a>
+          </td>
+          <td>
+            <a href="/admin/edit_artical_hoops/?id={{i.id}}"><i class="bi bi-pencil-square fs-3 text-success"></i></a>
+          </td>
+          <td>{{i.hoops_articleHeading}}</td>
+          <td>{{i.hoops_articleDescription}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% include 'admin/Footer.html' %}

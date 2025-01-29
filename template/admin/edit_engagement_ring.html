@@ -1,0 +1,40 @@
+{% include "admin/Navbar.html" %}
+
+<!-- Form Section with Bootstrap class to make the form responsive and occupy 100% width -->
+<div class="container mt-5">
+ <h3 class="text-center">Update Engagement Ring Details</h3>
+ <form action="/admin/update_engagement/" method="post" enctype="multipart/form-data" class="w-100 mx-auto">
+  {% csrf_token %}
+
+  <div class="row">
+   <div class="row mb-6 col-6">
+    <div class="col-md-12">
+     <input type="hidden" name="id" value="{{old_engagement.id}}">
+
+     <label for="engagement_image" class="form-label">Upload Image</label>
+     <input type="file" class="form-control" value="{{old_engagement.enagagement_image}}" name="enagagement_image">
+    </div>
+   </div>
+
+   <div class="row mb-3 col-6">
+    <div class="col-md-12">
+     <label for="engagement_price" class="form-label">Image Price</label>
+     <input type="number" class="form-control" value="{{old_engagement.enagagement_price}}" name="enagagement_price">
+    </div>
+   </div>
+  </div>
+
+  <div class="row mb-3">
+   <div class="col-md-12">
+    <label for="engagement_text" class="form-label">Image Text</label>
+    <input type="text" class="form-control" value="{{old_engagement.enagagement_text}}" name="enagagement_text">
+   </div>
+  </div>
+
+  <div class="text-center">
+   <button type="submit" class="btn btn-primary">Update</button>
+  </div>
+ </form>
+</div>
+
+{% include "admin/Footer.html" %}

@@ -1,0 +1,52 @@
+{% include "admin/Navbar.html" %}
+
+<!-- Form Section with Bootstrap class to make the form responsive and occupy 100% width -->
+<div class="container-fluid mt-5">
+    <h3 class="text-center">Upload Post Policies Details</h3>
+    <form action="/admin/save_post_policies/" method="post" enctype="multipart/form-data" class="w-100 mx-auto">
+        {% csrf_token %}
+        
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label class="form-label">Post Policies</label>
+                <input type="file" class="form-control" name="post_policies">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Post Policies Details</label>
+                <input type="text" class="form-control" name="post_policies_details">
+            </div>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+    </form>
+</div>
+
+<!-- Table Section with Bootstrap to occupy 100% width -->
+<div class="container-fluid mt-5">
+    <h3 class="text-center">Post Policies List</h3>
+    <table class="table table-bordered table-striped col-12">
+        <thead class="thead-dark">
+            <tr>
+                <th>Post Policies</th>
+                <th>Post Policies Details</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in post_policies %}
+            <tr>
+                <td><img src="/{{ i.post_policies }}" alt="Ring Image" class="img-fluid" style="max-width: 100px; height: auto;"></td>
+                <td>{{i.post_policies_details}}</td>
+                <td>
+                    <!-- <a href="/admin/edit_post_policies?id={{i.id}}" class="btn btn-warning btn-sm">Edit</a> -->
+                    <a href="/admin/delete_post_policies?id={{i.id}}" class="btn btn-danger btn-bg">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% include "admin/Footer.html" %}

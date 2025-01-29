@@ -1,0 +1,54 @@
+{% include "nav.html" %}
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-center mt-5">Log in to PNG Jewellers</h1>
+
+    </div>
+  </div>
+  
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-12">
+    	<div class="custom-hr">
+  <div class="line"></div>
+  <div class="center-logo">
+    <img 
+      src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS4q3a7SokAsnb4OjvSs9xOaCUZyg0HC5nWqBEaN-6Xhj7yYMFK" 
+      alt="Logo" 
+      class="img-fluid"
+    >
+  </div>
+  <div class="line"></div>
+</div>
+      <form>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email Address *</label>
+          <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+        </div>
+
+        <!-- Password -->
+        <div class="mb-3">
+          <label for="password" class="form-label">Password *</label>
+          <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+        </div>
+
+        <div class="mb-3">
+          <a href="#" class="text-decoration-none">Forgot Password?</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Log in</button>
+
+        <div class="text-center mt-3">
+          <p>New to PNG Jewellers? <a href="/signup" class="text-decoration-none">Create Account</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+{% include "footer.html" %}
+

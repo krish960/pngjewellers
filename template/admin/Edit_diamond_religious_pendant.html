@@ -1,0 +1,58 @@
+{% include 'admin/Navbar.html' %}
+
+<div class="container my-5">
+ <div class="row justify-content-center">
+  <div class="col-lg-6 col-md-8 col-sm-12">
+   <div class="card shadow-sm">
+    <div class="card-body">
+     <h5 class="card-title text-center mb-4">Edit Product Details</h5>
+
+     <form action="/admin/edit_diamond_religious_pendant_card/" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input type="hidden" name="id" value="{{ old_Data.id }}">
+
+      <!-- Card Image -->
+      <div class="mb-3">
+       <label for="cardImage" class="form-label">Current Image</label>
+       <!-- Display the current image -->
+       <div class="mb-2">
+        <img src="{{ old_Data.productImage.url }}" alt="Current Image" class="img-thumbnail" style="max-width: 150px;">
+       </div>
+       <!-- File input for new image -->
+       <label for="cardImage" class="form-label">Select New Image</label>
+       <input type="file" class="form-control" id="cardImage" name="cardImage_edit" accept="image/*">
+      </div>
+
+      <!-- Image Title -->
+      <div class="mb-3">
+       <label for="imgTitle" class="form-label">Image Title</label>
+       <input type="text" class="form-control" id="imgTitle" value="{{ old_Data.productTitle }}" name="imgTitle_edit"
+        placeholder="Enter image title" required>
+      </div>
+
+      <!-- Latest Price -->
+      <div class="mb-3">
+       <label for="latestPrice" class="form-label">Latest Price</label>
+       <input type="number" class="form-control" id="latestPrice" name="latestPrice_edit"
+        placeholder="Enter latest price" value="{{ old_Data.latestPrice }}" required>
+      </div>
+
+      <!-- Old Price -->
+      <div class="mb-3">
+       <label for="oldPrice" class="form-label">Old Price</label>
+       <input type="number" class="form-control" value="{{ old_Data.oldPrice }}" id="oldPrice" name="oldPrice_edit"
+        placeholder="Enter old price">
+      </div>
+
+      <!-- Submit Button -->
+      <div class="d-grid">
+       <button type="submit" class="btn btn-primary">Update</button>
+      </div>
+     </form>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+
+{% include 'admin/Footer.html' %}

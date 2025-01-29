@@ -1,0 +1,315 @@
+{% include "nav.html" %}
+
+
+ 
+
+ <!-- main content -->
+ <div class="container-fluide   ">
+
+    <!-- Small navbar1 row -->
+    <div class="row bg-light d-none d-md-block " style="height: 40px;">
+     <div class="col-md-12">
+      <small class="mt-2 ms-3 d-none d-md-block">
+       <a href="index.html" class="no-underline">Home</a>
+       <span class="text-secondary">></span>
+       <a href="All_Jewellery.html" class="no-underline">All Jewellery</a>
+      </small>
+     </div>
+    </div>
+  
+    <!-- Small navbar2 row -->
+    <div class="d-none d-md-block">
+     <div class="row bg-dark">
+      <div class="col-md-1 d-flex align-items-center justify-content-center option_box text-white">
+       <ion-icon name="options-outline"></ion-icon>
+      </div>
+      <div class="col-md-2 option_box">
+       <div class="dropdown">
+        <button class="dropdown-btn mt-1 button_nav" onclick="toggleDropdown(event)">
+         Price
+         <span style="margin-left: 140px;">
+          <ion-icon name="chevron-down-outline"></ion-icon>
+         </span>
+        </button>
+        <div class="dropdown-content">
+         <label><input type="checkbox" value="20000"> Less than ₹15,000
+  
+  
+         </label>
+         <label><input type="checkbox" value="25000"> ₹15,001 - ₹20,000</label>
+         <label><input type="checkbox" value="30000"> ₹20,001 - ₹30,000</label>
+         <label><input type="checkbox" value="35000"> ₹30,001 and Above </label>
+  
+  
+        </div>
+       </div>
+  
+      </div>
+  
+      <div class="col-md-2 option_box">
+       <div class="dropdown">
+        <button class="dropdown-btn mt-1 button_nav" onclick="toggleDropdown(event)">
+         METAL TYPE
+         <span style="margin-left: 110px;"> <ion-icon name="chevron-down-outline"></ion-icon></span>
+        </button>
+        <div class="dropdown-content">
+         <label><input type="checkbox" value="20000">
+          Yellow Gold
+  
+         </label>
+  
+  
+  
+  
+        </div>
+       </div>
+      </div>
+  
+      <div class="col-md-2 option_box">
+       <div class="dropdown">
+        <button class="dropdown-btn mt-1 button_nav" onclick="toggleDropdown(event)">
+         OCCASION
+         <span style="margin-left: 90px;">
+          <ion-icon name="chevron-down-outline"></ion-icon>
+         </span>
+        </button>
+        <div class="dropdown-content">
+         <label><input type="checkbox" value="20000">
+          Dilay Wear
+         </label>
+  
+  
+        </div>
+       </div>
+  
+      </div>
+      <div class="col-md-2 option_box">
+       <div class="dropdown">
+  
+       </div>
+      </div>
+      <div class="col-md-3 option_box">
+       <div class="dropdown">
+  
+       </div>
+      </div>
+  
+     </div>
+    </div>
+  
+  
+    <!-- select box -->
+    <div class="d-none d-md-block">
+     <div class="row row-color ">
+      <div class="col-md-8"></div>
+      <div class="col-md-4 d-flex justify-content-center align-items-center">
+       <select class="p-1" style="height: 34px; width: 270px;">
+        <option value="">Sort by</option>
+        <option value="">Popularity</option>
+        <option value="">Newly Listed</option>
+        <option value="">Price - High to Low</option>
+        <option value="">Price - Low to High</option>
+       </select>
+      </div>
+  
+     </div>
+    </div>
+  
+  
+   </div>
+  
+   <!-- cart start -->
+   <div class="container mb-3">
+    <!-- Card section start -->
+    <div class="row p-2">
+     <div class="col-md-12 mt-3">
+      <span class="text-dimond ms-2 d-none d-md-block" style="font-weight: 50;">Diamond Rings <span
+        style="font-weight: 490; font-size: 27px;"> 10 Designs</span></span>
+  
+  
+      <span class="text-dimond1   ms-2 d-block d-md-none" style="font-weight: 10;">
+       Diamond Rings <span style="font-weight: 490; font-size: 23px;">10 Designs</span>
+  
+       <hr>
+      </span>
+  
+  
+     </div>
+    </div>
+  
+    <!-- first row Cards -->
+    <div class="row ">
+     <!-- Card 1 -->
+     <div class="col-6 col-md-3  mb-3">
+      <div class="product-card1">
+       <div class="like-icon" onclick="toggleLike(this)">
+        <i class="far fa-heart"></i>
+       </div>
+       <img
+        src="https://d1put4x3vjlh9s.cloudfront.net/public/uploads/catalog/product/preview/F4D6ZG/DIDR0051M-FXY48-main.webp">
+       <div class="card-content mt-0 p-3">
+        <p>Opal Gold & Diamond Drops & Dangler Earring For W...</p>
+        <span class="price">₹500</span>
+        <span class="original-price">₹800</span>
+       </div>
+      </div>
+     </div>
+     <div class="col-6 col-md-3 mb-3">
+      <div class="product-card1">
+       <div class="like-icon" onclick="toggleLike(this)">
+        <i class="far fa-heart"></i>
+       </div>
+       <img
+        src="https://d1put4x3vjlh9s.cloudfront.net/public/uploads/catalog/product/preview/F4D6ZG/SG27365R-FXY48-main.webp"
+        alt="Product Image">
+       <div class="card-content p-3">
+        <p>Opal Gold & Diamond Drops & Dangler Earring For W...</p>
+        <span class="price">₹500</span>
+        <span class="original-price">₹800</span>
+       </div>
+      </div>
+     </div>
+     <div class="col-6 col-md-3  mb-3">
+      <div class="product-card1">
+       <div class="like-icon" onclick="toggleLike(this)">
+        <i class="far fa-heart"></i>
+       </div>
+       <img
+        src="https://d1put4x3vjlh9s.cloudfront.net/public/uploads/catalog/product/preview/F4D6ZG/RG9854-FXY48-main.webp">
+       <div class="card-content mt-0 p-3">
+        <p>Opal Gold & Diamond Drops & Dangler Earring For W...</p>
+        <span class="price">₹500</span>
+        <span class="original-price">₹800</span>
+       </div>
+      </div>
+     </div>
+     <div class="col-6 col-md-3 mb-3">
+      <div class="product-card1">
+       <div class="like-icon" onclick="toggleLike(this)">
+        <i class="far fa-heart"></i>
+       </div>
+       <img
+        src="https://d1put4x3vjlh9s.cloudfront.net/public/uploads/catalog/product/preview/F4D6ZG/DIDR0031M-FXY48-main.webp"
+        alt="Product Image">
+       <div class="card-content p-3">
+        <p>Opal Gold & Diamond Drops & Dangler Earring For W...</p>
+        <span class="price">₹500</span>
+        <span class="original-price">₹800</span>
+       </div>
+      </div>
+     </div>
+     <!-- big card -->
+  
+     <div class="col-md-6 ">
+      <img src="https://d1put4x3vjlh9s.cloudfront.net/public/uploads/adbanner/Cross-ads--01-100jpg3806240871002572814.jpg"
+       width="100%" alt="">
+     </div>
+  
+     <div class="col-6 col-md-3  mb-3">
+      <div class="product-card1">
+       <div class="like-icon" onclick="toggleLike(this)">
+        <i class="far fa-heart"></i>
+       </div>
+       <img
+        src="https://d1put4x3vjlh9s.cloudfront.net/public/uploads/catalog/product/preview/F4D6ZG/KLR2306A-FXY48-main.webp">
+       <div class="card-content mt-0 p-3">
+        <p>Opal Gold & Diamond Drops & Dangler Earring For W...</p>
+        <span class="price">₹500</span>
+        <span class="original-price">₹800</span>
+       </div>
+      </div>
+     </div>
+     <div class="col-6 col-md-3 mb-3">
+      <div class="product-card1">
+       <div class="like-icon" onclick="toggleLike(this)">
+        <i class="far fa-heart"></i>
+       </div>
+       <img
+        src="https://d1put4x3vjlh9s.cloudfront.net/public/uploads/catalog/product/preview/F4D6ZG/SG29592R-FXY48-main.webp"
+        alt="Product Image">
+       <div class="card-content p-3">
+        <p>Opal Gold & Diamond Drops & Dangler Earring For W...</p>
+        <span class="price">₹500</span>
+        <span class="original-price">₹800</span>
+       </div>
+      </div>
+     </div>
+    </div>
+  
+  
+    <!-- second row card -->
+  
+    <div class="row ">
+     <!-- Card 1 -->
+     <div class="col-6 col-md-3  mb-3">
+      <div class="product-card1">
+       <div class="like-icon" onclick="toggleLike(this)">
+        <i class="far fa-heart"></i>
+       </div>
+       <img
+        src="https://d1put4x3vjlh9s.cloudfront.net/public/uploads/catalog/product/preview/F4D6ZG/SG26093R-FXY48-main.webp">
+       <div class="card-content mt-0 p-3">
+        <p>Opal Gold & Diamond Drops & Dangler Earring For W...</p>
+        <span class="price">₹500</span>
+        <span class="original-price">₹800</span>
+       </div>
+      </div>
+     </div>
+     <div class="col-6 col-md-3 mb-3">
+      <div class="product-card1">
+       <div class="like-icon" onclick="toggleLike(this)">
+        <i class="far fa-heart"></i>
+       </div>
+       <img
+        src="https://d1put4x3vjlh9s.cloudfront.net/public/uploads/catalog/product/preview/F4D6ZG/SG29592R-FXY48-main.webp"
+        alt="Product Image">
+       <div class="card-content p-3">
+        <p>Opal Gold & Diamond Drops & Dangler Earring For W...</p>
+        <span class="price">₹500</span>
+        <span class="original-price">₹800</span>
+       </div>
+      </div>
+     </div>
+     <div class="col-6 col-md-3  mb-3">
+      <div class="product-card1">
+       <div class="like-icon" onclick="toggleLike(this)">
+        <i class="far fa-heart"></i>
+       </div>
+       <img
+        src="https://d1put4x3vjlh9s.cloudfront.net/public/uploads/catalog/product/preview/F4D6ZG/DIDR0140-FXY48-main.webp">
+       <div class="card-content mt-0 p-3">
+        <p>Opal Gold & Diamond Drops & Dangler Earring For W...</p>
+        <span class="price">₹500</span>
+        <span class="original-price">₹800</span>
+       </div>
+      </div>
+     </div>
+     <div class="col-6 col-md-3 mb-3">
+      <div class="product-card1">
+       <div class="like-icon" onclick="toggleLike(this)">
+        <i class="far fa-heart"></i>
+       </div>
+       <img
+        src="https://d1put4x3vjlh9s.cloudfront.net/public/uploads/catalog/product/preview/F4D6ZG/DR1005-FXY48-main.webp"
+        alt="Product Image">
+       <div class="card-content p-3">
+        <p>Opal Gold & Diamond Drops & Dangler Earring For W...</p>
+        <span class="price">₹500</span>
+        <span class="original-price">₹800</span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  
+  
+   <!-- hr -->
+   <div class="custom-hr">
+    <div class="line"></div>
+    <div class="center-logo">
+     <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS4q3a7SokAsnb4OjvSs9xOaCUZyg0HC5nWqBEaN-6Xhj7yYMFK"
+      alt="Logo" class="img-fluid">
+    </div>
+    <div class="line"></div>
+   </div>
+{% include "footer.html" %}

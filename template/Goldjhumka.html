@@ -1,0 +1,309 @@
+{% include "nav.html" %}
+<!-- main content -->
+<div class="container-fluid py-1">
+  <div class="row">
+    <div class="row bg-light d-none d-md-block ">
+      <div class="col-md-12">
+        <small class="mt-2 ms-3 d-none d-md-block">
+          <a href="index.html" class="no-underline">Home</a>
+        </small>
+      </div>
+    </div>
+
+
+    <div class="d-none d-md-block ">
+      <div class="row bg-dark">
+        <div class="col-md-1 d-flex align-items-center justify-content-center option_box text-white">
+          <ion-icon name="options-outline"></ion-icon>
+        </div>
+        <div class="col-md-2 option_box">
+          <div class="dropdown">
+            <button class="dropdown-btn mt-1 button_nav" onclick="toggleDropdown(event)">
+              Price
+              <span style="margin-left: 180px;">
+                <ion-icon name="chevron-down-outline"></ion-icon>
+              </span>
+            </button>
+            <div class="dropdown-content">
+              <label><input type="" value=""> Less than ₹10,000</label>
+              <label><input type="checkbox" value="25000"> ₹10,001 - ₹15,000</label>
+              <label><input type="checkbox" value="30000"> ₹15,001 - ₹20,000</label>
+              <label><input type="checkbox" value="35000"> ₹20,001 - ₹30,000</label>
+              <label><input type="checkbox" value="40000">₹30,001 - ₹40,000 </label>
+              <label><input type="checkbox" value="45000"> ₹40,001 - ₹50,000 </label>
+              <label><input type="checkbox" value="50000">₹50,001 and Above</label>
+
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-2 option_box">
+          <div class="dropdown">
+            <button class="dropdown-btn mt-1 button_nav" onclick="toggleDropdown(event)">
+              Metal Type
+              <span style="margin-left: 150px;">
+                <ion-icon name="chevron-down-outline"></ion-icon>
+              </span>
+
+            </button>
+            <div class="dropdown-content">
+              <label><input type="checkbox" value="20000">
+                yellow Gold
+              </label>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-2 option_box">
+          <div class="dropdown">
+            <button class="dropdown-btn mt-1 button_nav d-flex justify-content-between align-items-center w-100 "
+              type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Gifts
+              <span style="margin-left: 150px;">
+                <ion-icon name="chevron-down-outline" class="ms-auto icons"></ion-icon>
+              </span>
+            </button>
+            <div class="dropdown-menu">
+              <label class="dropdown-item">
+                <input type="checkbox" class="form-check-input me-2">For Her
+              </label>
+
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-2 option_box">
+          <div class="dropdown">
+            <button class="dropdown-btn mt-1 button_nav" onclick="toggleDropdown(event)">
+              Material
+              <span style="margin-left: 150px;">
+                <ion-icon name="chevron-down-outline"></ion-icon></span>
+            </button>
+            <div class="dropdown-content">
+              <label><input type="checkbox" value="30000">
+                Gold
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 option_box">
+          <div class="dropdown">
+            <button class="btn dropdown-btn" data-bs-toggle="offcanvas" data-bs-target="#filterSidebar"
+              aria-controls="filterSidebar">
+              <u>More Filters + </u>
+              <span style="margin-left: 150px;">
+                <ion-icon name="chevron-down-outline" class="ms-auto icons"></ion-icon>
+              </span>
+            </button>
+
+            <!-- Filter Sidebar (Offcanvas) -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="filterSidebar" aria-labelledby="filterSidebarLabel">
+              <div class="offcanvas-header d-flex justify-content-between align-items-center">
+                <!-- Title and Clear All aligned on the left -->
+                <div class="d-flex align-items-center">
+                  <h5 class="offcanvas-title" id="filterSidebarLabel">Filter</h5>
+                  <span class="clear-all text-dark" style="cursor: pointer; margin-left: 220px;">CLEAR ALL</span>
+                </div>
+                <!-- Close Button aligned on the right -->
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                  aria-label="Close"></button>
+              </div>
+
+              <hr class=" border-1 m-0 border-dark">
+              <div class="offcanvas-body">
+                <div class="accordion" id="filterAccordion">
+
+                  <!-- Applied Filters Section -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="appliedFiltersHeading">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#appliedFilters" aria-expanded="true" aria-controls="appliedFilters">
+                        Applied Filters
+                      </button>
+                    </h2>
+
+                  </div>
+
+                  <hr class="border border-1 mt-2 border-dark">
+
+                  <!-- Metal Colour Section -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="metalColourHeading">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#metalColour" aria-expanded="false" aria-controls="metalColour">
+                        Metal Colour
+                      </button>
+                    </h2>
+                    <div id="metalColour" class="accordion-collapse collapse" aria-labelledby="metalColourHeading">
+                      <div class="accordion-body">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="yellowGold">
+                          <label class="form-check-label" for="yellowGold">Yellow Gold</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <hr class="border border-1 mt-2 border-dark">
+
+                  <!-- Shop For Section -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="shopForHeading">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#shopFor" aria-expanded="false" aria-controls="shopFor">
+                        Shop For
+                      </button>
+                    </h2>
+                    <div id="shopFor" class="accordion-collapse collapse" aria-labelledby="shopForHeading">
+                      <div class="accordion-body">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="shopForWomen">
+                          <label class="form-check-label" for="shopForWomen">Women</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <hr class="border border-1 mt-2 border-dark">
+
+                  <!-- Collections Section -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="collectionsHeading">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collections" aria-expanded="false" aria-controls="collections">
+                        Collections
+                      </button>
+                    </h2>
+                    <div id="collections" class="accordion-collapse collapse" aria-labelledby="collectionsHeading">
+                      <div class="accordion-body">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="goldDiwali">
+                          <label class="form-check-label" for="goldDiwali">GoldDiwaliOffers_100</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="newLaunch">
+                          <label class="form-check-label" for="newLaunch">New Launch</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <hr class="border border-1 mt-2 border-dark">
+
+                  <!-- Occasion Section -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="occasionHeading">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#occasion" aria-expanded="false" aria-controls="occasion">
+                        Occasion
+                      </button>
+                    </h2>
+                    <div id="occasion" class="accordion-collapse collapse" aria-labelledby="occasionHeading">
+                      <div class="accordion-body">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="partyWear">
+                          <label class="form-check-label" for="partyWear">Party Wear</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- Apply Button -->
+                <button class="btn btn-purple w-100 mt-4" style="background-color: #6c33a3; color: #fff;">
+                  APPLY
+                </button>
+              </div>
+              <hr class="border border-1 border-dark">
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+      </div>
+    </div>
+
+
+    <!-- select box -->
+    <div class="d-none d-md-block">
+      <div class="row  sort-options ">
+        <div class="col-md-8"></div>
+        <div class="col-md-4 d-flex justify-content-center align-items-center">
+
+          <select id="sort-options " class="p-1 mt-3 w-75 ">
+            <option value="">Sort by</option>
+            <option value="popularity">Popularity</option>
+            <option value="newly-listed">Newly Listed</option>
+            <option value="price-high-to-low">Price - High to Low</option>
+            <option value="price-low-to-high">Price - Low to High</option>
+          </select>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+<div class="container py-2">
+  <div class="row">
+    <div class="col-12">
+      <h4 class="fs-2 fw-light">
+        Gold Jhumkas
+        <span class="designs fs-5 fw-bold">Designs</span>
+      </h4>
+
+    </div>
+  </div>
+</div>
+
+<!-- 1 row card -->
+
+
+
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+    <!-- Card 1 -->
+    {% for i in Gold %}
+    <div class="card border-0">
+      <span class="like-icon" onclick="toggleLike(this)">
+        <i class="far fa-heart"></i>
+      </span>
+      <img src="/{{i.Gold_Jhumkas_image}}" class="card-img-top mt-2" alt="Card Image 1">
+      <div class="card-body">
+        <p class="card-text">
+        <h5 class="text-dark ms-2">₹{{i.Gold_Jhumkas_latest_price}}
+          <del class="text-muted">₹{{i.Gold_Jhumkas_old_price}}</del>
+        </h5>
+        </p>
+        <p class="card-text">{{i.Gold_Jhumkas_image_title}}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+<!-- hr -->
+<div class="custom-hr">
+  <div class="line"></div>
+  <div class="center-logo">
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS4q3a7SokAsnb4OjvSs9xOaCUZyg0HC5nWqBEaN-6Xhj7yYMFK"
+      alt="Logo" class="img-fluid">
+  </div>
+  <div class="line"></div>
+</div>
+
+
+
+
+
+
+{% include "footer.html" %}

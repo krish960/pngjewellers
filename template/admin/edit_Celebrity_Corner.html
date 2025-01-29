@@ -1,0 +1,86 @@
+{% include 'admin/Navbar.html' %}
+
+<div class="container my-5">
+ <div class="row justify-content-center">
+  <div class="col-lg-6 col-md-8 col-sm-12">
+   <div class="card shadow-lg border-0 rounded-4">
+    <div class="card-body">
+     <h5 class="card-title text-center mb-4 text-primary fw-bold">Edit Cart Image and Details</h5>
+
+     <form action="/admin/update_edit_Celebrity_Corner/" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input type="hidden" name="id" value="{{ old_Data.id }}">
+
+      <!-- Card Image -->
+      <div class="mb-4">
+       <label for="cardImage" class="form-label fw-bold">Current Image</label>
+       <!-- Display the current image -->
+       <div class="text-center mb-3">
+        <img src="{{ old_Data.Celebrity_Corner_img.url }}" alt="Current Image" 
+             class="img-thumbnail rounded-circle shadow" style="max-width: 150px;">
+       </div>
+       <!-- File input for new image -->
+       <label for="cardImage" class="form-label">Select New Image</label>
+       <input type="file" class="form-control border-2" id="cardImage" 
+              name="Celebrity_Corner_img" accept="image/*" required>
+      </div>
+
+      <!-- Additional Images -->
+      <div class="mb-4">
+       <label for="cardImage" class="form-label fw-bold">Image 2</label>
+       <div class="text-center mb-3">
+        <img src="{{ old_Data.Celebrity_Corner_img1.url }}" alt="Current Image 2" 
+             class="img-thumbnail rounded-circle shadow" style="max-width: 150px;">
+       </div>
+       <input type="file" class="form-control border-2" id="cardImage" 
+              name="Celebrity_Corner_img1" accept="image/*" required>
+      </div>
+
+      <div class="mb-4">
+       <label for="cardImage" class="form-label fw-bold">Image 3</label>
+       <div class="text-center mb-3">
+        <img src="{{ old_Data.Celebrity_Corner_img2.url }}" alt="Current Image 3" 
+             class="img-thumbnail rounded-circle shadow" style="max-width: 150px;">
+       </div>
+       <input type="file" class="form-control border-2" id="cardImage" 
+              name="Celebrity_Corner_img2" accept="image/*" required>
+      </div>
+
+      <div class="mb-4">
+       <label for="cardImage" class="form-label fw-bold">Image 4</label>
+       <div class="text-center mb-3">
+        <img src="{{ old_Data.Celebrity_Corner_img3.url }}" alt="Current Image 4" 
+             class="img-thumbnail rounded-circle shadow" style="max-width: 150px;">
+       </div>
+       <input type="file" class="form-control border-2" id="cardImage" 
+              name="Celebrity_Corner_img3" accept="image/*" required>
+      </div>
+
+      <!-- Image Title -->
+      <div class="mb-3">
+       <label for="imgTitle" class="form-label fw-bold">Image Title</label>
+       <input type="text" class="form-control border-2" id="imgTitle" 
+              value="{{ old_Data.Celebrity_Corner_Heiding }}" 
+              name="Celebrity_Corner_Heiding" placeholder="Enter image title" required>
+      </div>
+
+      <!-- Image Description -->
+      <div class="mb-3">
+       <label for="imgDesc" class="form-label fw-bold">Image Description</label>
+       <textarea type="text" class="form-control border-2" id="imgDesc" 
+                 name="Celebrity_Corner_Description" placeholder="Enter description" required>
+       {{ old_Data.Celebrity_Corner_Description }}</textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="d-grid">
+       <button type="submit" class="btn btn-primary btn-lg shadow">Update</button>
+      </div>
+     </form>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+
+{% include 'admin/Footer.html' %}

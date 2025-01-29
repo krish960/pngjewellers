@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Kaiadmin - Bootstrap 5 Admin Dashboard</title>
+  <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="icon" href="https://d1put4x3vjlh9s.cloudfront.net/public/uploads/website/png_logo_1727074242.svg"
+    type="image/x-icon" />
+
+  <!-- Fonts and icons -->
+  <script src="/static/admin/js/plugin/webfont/webfont.min.js"></script>
+  <script>
+    WebFont.load({
+      google: { families: ["Public Sans:300,400,500,600,700"] },
+      custom: {
+        families: [
+          "Font Awesome 5 Solid",
+          "Font Awesome 5 Regular",
+          "Font Awesome 5 Brands",
+          "simple-line-icons",
+        ],
+        urls: ["/static/admin/css/fonts.min.css"],
+      },
+      active: function () {
+        sessionStorage.fonts = true;
+      },
+    });
+  </script>
+  <style>
+    .profile-container {
+      position: relative;
+
+      margin-right: 50px;
+    }
+
+
+    .profile-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      overflow: hidden;
+      display: none;
+      /* Initially hidden */
+      z-index: 10;
+    }
+
+    .dropdown-menu ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .dropdown-menu li {
+      padding: 10px 20px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .dropdown-menu li:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown-menu li a {
+      text-decoration: none;
+      color: #333;
+      display: block;
+    }
+
+    .dropdown-menu li:hover {
+      background-color: #f0f0f0;
+    }
+  </style>
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="/static/admin/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/static/admin/css/plugins.min.css" />
+  <link rel="stylesheet" href="/static/admin/css/kaiadmin.min.css" />
+
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link rel="stylesheet" href="/static/admin/css/demo.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <!-- Bootstrap Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- Sidebar -->
+    <div class="sidebar" data-background-color="dark">
+      <div class="sidebar-logo">
+        <!-- Logo Header -->
+        <div class="logo-header" data-background-color="dark">
+          <a href="index.html" class="logo">
+            <img src="https://d1put4x3vjlh9s.cloudfront.net/public/uploads/website/png_logo_1727074242.svg"
+              alt="navbar brand" class="navbar-brand" height="50" />
+          </a>
+          <div class="nav-toggle">
+            <button class="btn btn-toggle toggle-sidebar">
+              <i class="gg-menu-right"></i>
+            </button>
+            <button class="btn btn-toggle sidenav-toggler">
+              <i class="gg-menu-left"></i>
+            </button>
+          </div>
+          <button class="topbar-toggler more">
+            <i class="gg-more-vertical-alt"></i>
+          </button>
+        </div>
+        <!-- End Logo Header -->
+      </div>
+      <!-- try -->
+      <div class="sidebar-wrapper scrollbar scrollbar-inner">
+        <div class="sidebar-content">
+          <ul class="nav nav-secondary">
+
+
+            <li class="nav-item active">
+              <a data-bs-toggle="collapse" href="#dashboard" class="collapsed" aria-expanded="false">
+                <p>Dashboard</p>
+                <span class="caret"></span>
+              </a>
+              <div class="collapse" id="dashboard">
+                <ul class="nav nav-collapse">
+                  <li>
+                    <a href="/admin/dashbord">
+                      <span class="sub-item">Dashbord</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="nav-item active">
+              <a data-bs-toggle="collapse" href="#All_Jewellery" class="collapsed" aria-expanded="false">
+                <p>All Jewellery</p>
+                <span class="caret"></span>
+              </a>
+              <div class="collapse" id="All_Jewellery">
+                <ul class="nav nav-collapse">
+                  <li class="nav-item active">
+                    <a data-bs-toggle="collapse" href="#Jewellery" class="collapsed" aria-expanded="false">
+                      <p>Jewellery</p>
+                      <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="Jewellery">
+                      <ul class="nav nav-collapse">
+                        <li>
+                          <a href="/admin/Jewellery">
+                            <span class="sub-item">Jewellery</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item active">
+                    <a data-bs-toggle="collapse" href="#Index" class="collapsed" aria-expanded="false">
+                      <p>Index</p>
+                      <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="Index">
+                      <ul class="nav nav-collapse">
+                        <li>
+                          <a href="/admin/Index_main_page">
+                            <span class="sub-item">Index Main Page</span>
+                          </a>
+                        </li>
+
+
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="nav-item active">
+              <a data-bs-toggle="collapse" href="#Diamond" class="collapsed" aria-expanded="false">
+                <p>Diamond</p>
+                <span class="caret"></span>
+              </a>
+              <div class="collapse" id="Diamond">
+                <ul class="nav nav-collapse">
+                  <li class="nav-item active">
+                    <a data-bs-toggle="collapse" href="#Earrings" class="collapsed" aria-expanded="false">
+                      <p>Earrings</p>
+                      <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="Earrings">
+                      <ul class="nav nav-collapse">
+
+                        <!-- <li class="nav-item">
+                          <a data-bs-toggle="collapse" href="#Studs" class="collapsed" aria-expanded="false">
+                            <i>Studs</i>
+                            <span class="caret"></span>
+                          </a>
+                          <div class="collapse" id="Studs">
+                            <ul class="nav nav-collapse">
+                              <li>
+                                <a href="/admin/Add_banner_img">
+                                  <span class="sub-item">Add banner Img</span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="/admin/studs_card">
+                                  <span class="sub-item">Add Card and Title</span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="/admin/studs_artical">
+                                  <span class="sub-item">article and description</span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </li> -->
+
+                        <li>
+                          <a href="/admin/Studs_Erings">
+                            <span class="sub-item">Studs</span>
+                          </a>
+                        </li>
+
+                        <li>
+                          <a href="/admin/Hoops_and_Huggies">
+                            <span class="sub-item">Hoops and Huggies</span>
+                          </a>
+                        </li>
+
+
+
+                        <li>
+                          <a href="/admin/drops_banglers">
+                            <span class="sub-item">Drops and Danglers</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/admin/Sui_Dhaga">
+                            <span class="sub-item">Sui Dhaga</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/admin/Party_Wear">
+                            <span class="sub-item">Party Wear</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/admin/Erings_Daily_Wear">
+                            <span class="sub-item"> Daily Wear</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <!-- <li class="nav-item active">
+                    <a data-bs-toggle="collapse" href="#Rings" class="collapsed" aria-expanded="false">
+                      <p>Rings</p>
+                      <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="Rings">
+                      <ul class="nav nav-collapse">
+                        <li>
+                          <a href="/admin/Bands">
+                            <span class="sub-item">Bands</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/admin/Engagement_Rings">
+                            <span class="sub-item">Engagement Rings</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/admin/Fashion_Ring">
+                            <span class="sub-item">Fashion Ring</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/admin/casual_rings">
+                            <span class="sub-item">casual rings</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li> -->
+                  <li class="nav-item active">
+                    <a data-bs-toggle="collapse" href="#Rings" class="collapsed" aria-expanded="false">
+                      <p>Rings</p>
+                      <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="Rings">
+                      <ul class="nav nav-collapse">
+                        <li>
+                          <a href="/admin/Diamondrings_bands">
+                            <span class="sub-item">Bands</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/admin/Diamond_engagement_ring">
+                            <span class="sub-item">Engagement Rings</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/admin/Diamond_fashion_ring">
+                            <span class="sub-item">Fashion Ring</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/admin/Diamond_casual_ring">
+                            <span class="sub-item">casual rings</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+
+                  <li class="nav-item active">
+                    <a data-bs-toggle="collapse" href="#Necklaces" class="collapsed" aria-expanded="false">
+                      <p>Necklaces</p>
+                      <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="Necklaces">
+                      <ul class="nav nav-collapse">
+                        <li>
+                          <a href="/admin/Lariat_Necklace_Home">
+                            <span class="sub-item">Lariat Necklace</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/admin/Diamond_Short_Necklace">
+                            <span class="sub-item">Diamond -Short Necklace</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item active">
+                    <a data-bs-toggle="collapse" href="#Pendant" class="collapsed" aria-expanded="false">
+                      <p>Pendant</p>
+                      <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="Pendant">
+                      <ul class="nav nav-collapse">
+                        <li>
+                          <a href="/admin/Heart_Pendant">
+                            <span class="sub-item">Heart Pendant</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/admin/diamond_religious_pendant">
+                            <span class="sub-item">diamond religious pendant</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item active">
+                    <a data-bs-toggle="collapse" href="#Mangalsutra" class="collapsed" aria-expanded="false">
+                      <p>Mangalsutra</p>
+                      <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="Mangalsutra">
+                      <ul class="nav nav-collapse">
+                        <li>
+                          <a href="/admin/Trendy_mo_d_mangalsutra">
+                            <span class="sub-item">Trendy_mo_d_mangalsutra</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item active">
+                    <a data-bs-toggle="collapse" href="#Bracelets_and_Bangles" class="collapsed" aria-expanded="false">
+                      <p>Bracelets_and_Bangles</p>
+                      <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="Bracelets_and_Bangles">
+                      <ul class="nav nav-collapse">
+                        <li>
+                          <a href="/admin/Flexible_Bracelet">
+                            <span class="sub-item">Flexible Bracelet</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item active">
+                    <a data-bs-toggle="collapse" href="#Kurta_Button" class="collapsed" aria-expanded="false">
+                      <p>Kurta Button</p>
+                      <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="Kurta_Button">
+                      <ul class="nav nav-collapse">
+                        <li>
+                          <a href="/admin/Kurta_Button">
+                            <span class="sub-item"> Kurta Button</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item active">
+                    <a data-bs-toggle="collapse" href="#Cufflinks" class="collapsed" aria-expanded="false">
+                      <p>Cufflinks</p>
+                      <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="Cufflinks">
+                      <ul class="nav nav-collapse">
+                        <li>
+                          <a href="/admin/Diamond_Cufflinks">
+                            <span class="sub-item">Diamond Cufflinks</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item active">
+                    <a data-bs-toggle="collapse" href="#Nosepin" class="collapsed" aria-expanded="false">
+                      <p>Nosepin</p>
+                      <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="Nosepin">
+                      <ul class="nav nav-collapse">
+                        <li>
+                          <a href="/admin/diamond_nosepin">
+                            <span class="sub-item"> diamond nosepin</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+
+                </ul>
+              </div>
+            </li>
+
+            <li class="nav-item active">
+              <a data-bs-toggle="collapse" href="#Gold" class="collapsed" aria-expanded="false">
+                <p>Gold</p>
+                <span class="caret"></span>
+              </a>
+              <div class="collapse" id="Gold">
+                <ul class="nav nav-collapse">
+                  <li class="nav-item active">
+                    <a data-bs-toggle="collapse" href="#GoldRings" class="collapsed" aria-expanded="false">
+                      <p>Gold Rings</p>
+                      <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="GoldRings">
+                      <ul class="nav nav-collapse">
+
+                        <li>
+                          <a href="/admin/Gold_PartyWear">
+                            <span class="sub-item">Party Wear</span>
+                          </a>
+                        </li>
+
+                        <li>
+                          <a href="/admin/Gold_OfficeWear">
+                            <span class="sub-item">Office Wear</span>
+                          </a>
+                        </li>
+
+                        <li>
+                          <a href="/admin/Gold_dailywear">
+                            <span class="sub-item">daily wear</span>
+                          </a>
+                        </li>
+
+                        <li>
+                          <a href="/admin/Gold_Kids">
+                            <span class="sub-item">Kids</span>
+                          </a>
+                        </li>
+
+                        <li>
+                          <a href="/admin/Gold_Drops_Danglers">
+                            <span class="sub-item">Drops and Danglers</span>
+                          </a>
+                        </li>
+
+                      </ul>
+                    </div>
+                  </li>
+
+                  <li class="nav-item active">
+                    <a data-bs-toggle="collapse" href="#GoldErring" class="collapsed" aria-expanded="false">
+                      <p>Gold Errings</p>
+                      <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="GoldErring">
+                      <ul class="nav nav-collapse">
+                        <li>
+                          <a href="/admin/Gold_Jhumkas">
+                            <span class="sub-item">Jhumkas</span>
+                          </a>
+                        </li>
+
+                        <li>
+                          <a href="/admin/Gold_Menstuds">
+                            <span class="sub-item">Men studs</span>
+                          </a>
+                        </li>
+
+                      </ul>
+                    </div>
+                  </li>
+
+                  <li class="nav-item active">
+                    <a data-bs-toggle="collapse" href="#GoldBracelets" class="collapsed" aria-expanded="false">
+                      <p>Gold Bracelets</p>
+                      <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="GoldBracelets">
+                      <ul class="nav nav-collapse">
+                        <li>
+                          <a href="/admin/Gold_GoldBracelets">
+                            <span class="sub-item">Kids-Bracelets</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            <li class="nav-item active">
+              <a data-bs-toggle="collapse" href="#Bullions" class="collapsed" aria-expanded="false">
+                <p>Bullions</p>
+                <span class="caret"></span>
+              </a>
+              <div class="collapse" id="Bullions">
+                <ul class="nav nav-collapse">
+                  <li class="nav-item active">
+                    <a data-bs-toggle="collapse" href="#Gold_Vedhani" class="collapsed" aria-expanded="false">
+                      <p>Gold Vedhani</p>
+                      <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="Gold_Vedhani">
+                      <ul class="nav nav-collapse">
+                        <li>
+                          <a href="/admin/Gold_vedhani">
+                            <span class="sub-item">Gold Vedhani</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item active">
+                    <a data-bs-toggle="collapse" href="#Gold_Coin" class="collapsed" aria-expanded="false">
+                      <p>Gold_Coin</p>
+                      <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="Gold_Coin">
+                      <ul class="nav nav-collapse">
+                        <li>
+                          <a href="/admin/Gold_plain">
+                            <span class="sub-item">Gold_plain</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/admin/Gold_laxmi_shree">
+                            <span class="sub-item">Gold_laxmi_shree</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/admin/PNG">
+                            <span class="sub-item">PNG</span>
+                          </a>
+                        </li>
+
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item active">
+                    <a data-bs-toggle="collapse" href="#Silver_Coin" class="collapsed" aria-expanded="false">
+                      <p>Silver_Coin</p>
+                      <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="Silver_Coin">
+                      <ul class="nav nav-collapse">
+                        <li>
+                          <a href="/admin/Silver_Coin">
+                            <span class="sub-item">Pure Silver chip</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            </li>
+
+            <li class="nav-item active">
+              <a data-bs-toggle="collapse" href="#Collections" class="collapsed" aria-expanded="false">
+                <p>Collections</p>
+                <span class="caret"></span>
+              </a>
+              <div class="collapse" id="Collections">
+                <ul class="nav nav-collapse">
+                  <li>
+                    <a href="/admin/Collections_Main">
+                      <span class="sub-item">Collections Main</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item active">
+              <a data-bs-toggle="collapse" href="#Investors" class="collapsed" aria-expanded="false">
+                <p>Investors</p>
+                <span class="caret"></span>
+              </a>
+              <div class="collapse" id="Investors">
+                <ul class="nav nav-collapse">
+                  <li>
+                    <a href="/admin/investors_image">
+                      <span class="sub-item">Investors Image</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/admin/annual_reports">
+                      <span class="sub-item">Annual Reports</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/admin/corporate_policies">
+                      <span class="sub-item"> Corporate Policies</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/admin/policies1">
+                      <span class="sub-item"> Risk Policies</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/admin/post_policies">
+                      <span class="sub-item"> Post Policies</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/admin/corporate_governance">
+                      <span class="sub-item">Corporate Governance</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/admin/material_documents">
+                      <span class="sub-item">Material Documents</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/admin/ipo_documents">
+                      <span class="sub-item">IPO Documents</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/admin/group_gompanies">
+                      <span class="sub-item">Group Companies And Subsidiaries</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/admin/fixed_deposit">
+                      <span class="sub-item">Fixed Deposit Circular</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/admin/financial_results">
+                      <span class="sub-item">Financial Results</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/admin/investors_contacts">
+                      <span class="sub-item">Investor Contacts</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/admin/disclosure_under_regulation">
+                      <span class="sub-item">Disclosure Under Regulation 46 of SEBI (LODR)</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/admin/shareholding_pattern">
+                      <span class="sub-item">Shareholding Pattern</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/admin/stock_exchange">
+                      <span class="sub-item">Stock Exchange Fillings</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/admin/notice_outcome">
+                      <span class="sub-item">Notice and out Come of the meet</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/admin/press_release">
+                      <span class="sub-item">Press Release</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/admin/corporate_social">
+                      <span class="sub-item">Corporate Social Responsibility</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/admin/reports">
+                      <span class="sub-item">Reports</span>
+                    </a>
+                  </li>
+                  
+                </ul>
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </div>
+
+      <!-- try end -->
+    </div>
+
+
+
+    <!-- End Sidebar -->
+    <div class="main-panel">
+      <div class="main-header">
+        <div class="main-header-logo">
+          <!-- Logo Header -->
+          <div class="logo-header" data-background-color="dark">
+            <a href="index.html" class="logo">
+              <img src="/static/admin/img/kaiadmin/logo_light.svg" alt="navbar brand" class="navbar-brand"
+                height="20" />
+            </a>
+            <div class="nav-toggle">
+              <button class="btn btn-toggle toggle-sidebar">
+                <i class="gg-menu-right"></i>
+              </button>
+              <button class="btn btn-toggle sidenav-toggler">
+                <i class="gg-menu-left"></i>
+              </button>
+            </div>
+            <button class="topbar-toggler more">
+              <i class="gg-more-vertical-alt"></i>
+            </button>
+          </div>
+          <!-- End Logo Header -->
+        </div>
+        <!-- Navbar Header -->
+        <nav class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom">
+          <div class="container-fluid">
+            <nav class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-lg-flex">
+            </nav>
+
+            <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
+              <li class="nav-item topbar-icon dropdown hidden-caret d-flex d-lg-none">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                  aria-expanded="false" aria-haspopup="true">
+                  <i class="fa fa-search"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-search animated fadeIn">
+                  <form class="navbar-left navbar-form nav-search">
+                    <div class="input-group">
+                      <input type="text" placeholder="Search ..." class="form-control" />
+                    </div>
+                  </form>
+                </ul>
+              </li>
+
+              <!-- <li class="nav-item topbar-icon dropdown hidden-caret">
+                <a class="nav-link dropdown-toggle" href="#" id="notifDropdown" role="button" data-bs-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-bell"></i>
+                  <span class="notification">4</span>
+                </a>
+                <ul class="dropdown-menu notif-box animated fadeIn" aria-labelledby="notifDropdown">
+                  <li>
+                    <div class="dropdown-title">
+                      You have 4 new notification
+                    </div>
+                  </li>
+                  <li>
+                    <div class="notif-scroll scrollbar-outer">
+                      <div class="notif-center">
+                        <a href="#">
+                          <div class="notif-icon notif-primary">
+                            <i class="fa fa-user-plus"></i>
+                          </div>
+                          <div class="notif-content">
+                            <span class="block"> New user registered </span>
+                            <span class="time">5 minutes ago</span>
+                          </div>
+                        </a>
+                        <a href="#">
+                          <div class="notif-icon notif-success">
+                            <i class="fa fa-comment"></i>
+                          </div>
+                          <div class="notif-content">
+                            <span class="block">
+                              Rahmad commented on Admin
+                            </span>
+                            <span class="time">12 minutes ago</span>
+                          </div>
+                        </a>
+                        <a href="#">
+                          <div class="notif-img">
+                            <img src="/static/admin/img/profile2.jpg" alt="Img Profile" />
+                          </div>
+                          <div class="notif-content">
+                            <span class="block">
+                              Reza send messages to you
+                            </span>
+                            <span class="time">12 minutes ago</span>
+                          </div>
+                        </a>
+                        <a href="#">
+                          <div class="notif-icon notif-danger">
+                            <i class="fa fa-heart"></i>
+                          </div>
+                          <div class="notif-content">
+                            <span class="block"> Farrah liked Admin </span>
+                            <span class="time">17 minutes ago</span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <a class="see-all" href="javascript:void(0);">See all notifications<i class="fa fa-angle-right"></i>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item topbar-icon dropdown hidden-caret">
+                <a class="nav-link" data-bs-toggle="dropdown" href="#" aria-expanded="false">
+                  <i class="fas fa-layer-group"></i>
+                </a>
+                <div class="dropdown-menu quick-actions animated fadeIn">
+                  <div class="quick-actions-header">
+                    <span class="title mb-1">Quick Actions</span>
+                    <span class="subtitle op-7">Shortcuts</span>
+                  </div>
+                  <div class="quick-actions-scroll scrollbar-outer">
+                    <div class="quick-actions-items">
+                      <div class="row m-0">
+                        <a class="col-6 col-md-4 p-0" href="#">
+                          <div class="quick-actions-item">
+                            <div class="avatar-item bg-danger rounded-circle">
+                              <i class="far fa-calendar-alt"></i>
+                            </div>
+                            <span class="text">Calendar</span>
+                          </div>
+                        </a>
+                        <a class="col-6 col-md-4 p-0" href="#">
+                          <div class="quick-actions-item">
+                            <div class="avatar-item bg-warning rounded-circle">
+                              <i class="fas fa-map"></i>
+                            </div>
+                            <span class="text">Maps</span>
+                          </div>
+                        </a>
+                        <a class="col-6 col-md-4 p-0" href="#">
+                          <div class="quick-actions-item">
+                            <div class="avatar-item bg-info rounded-circle">
+                              <i class="fas fa-file-excel"></i>
+                            </div>
+                            <span class="text">Reports</span>
+                          </div>
+                        </a>
+                        <a class="col-6 col-md-4 p-0" href="#">
+                          <div class="quick-actions-item">
+                            <div class="avatar-item bg-success rounded-circle">
+                              <i class="fas fa-envelope"></i>
+                            </div>
+                            <span class="text">Emails</span>
+                          </div>
+                        </a>
+                        <a class="col-6 col-md-4 p-0" href="#">
+                          <div class="quick-actions-item">
+                            <div class="avatar-item bg-primary rounded-circle">
+                              <i class="fas fa-file-invoice-dollar"></i>
+                            </div>
+                            <span class="text">Invoice</span>
+                          </div>
+                        </a>
+                        <a class="col-6 col-md-4 p-0" href="#">
+                          <div class="quick-actions-item">
+                            <div class="avatar-item bg-secondary rounded-circle">
+                              <i class="fas fa-credit-card"></i>
+                            </div>
+                            <span class="text">Payments</span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li> -->
+
+              <li class="profile-container">
+                <img src="https://t4.ftcdn.net/jpg/02/24/86/95/240_F_224869519_aRaeLneqALfPNBzg0xxMZXghtvBXkfIA.jpg"
+                  alt="Profile" class="profile-img" id="profileImg">
+                <span>Png Admin</span>
+                <div class="dropdown-menu" id="dropdownMenu">
+                  <ul>
+                    <li><a href="/admin/Profile">My Profile</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="/adminpanel">Logout</a></li>
+                    <li><a href="/admin/forgot_password">Forget</a></li>
+
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <!-- End Navbar -->
+      </div>
+      <br>
+      <br><br>
+
+
+      <script type="text/javascript">
+        const profileImg = document.getElementById('profileImg');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+
+        // Toggle dropdown menu visibility on click
+        profileImg.addEventListener('click', () => {
+          dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+        });
+
+        // Close dropdown if clicked outside
+        document.addEventListener('click', (event) => {
+          if (!profileImg.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.style.display = 'none';
+          }
+        });
+
+      </script>

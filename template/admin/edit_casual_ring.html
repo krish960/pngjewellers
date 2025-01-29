@@ -1,0 +1,43 @@
+{% include "admin/Navbar.html" %}
+
+<!-- Edit Casual Ring Form Section with Bootstrap class to make the form responsive and occupy 100% width -->
+<div class="container mt-5">
+ <h3 class="text-center mb-4">Update Casual Ring Details</h3>
+ <form method="POST" enctype="multipart/form-data" class="w-100 mx-auto">
+  {% csrf_token %}
+
+  <div class="row">
+   <div class="row mb-6 col-6">
+    <div class="col-md-12">
+     <input type="hidden" name="id" value="{{ ring.id }}">
+
+     <!-- Image Upload Field -->
+     <label for="casualring_image" class="form-label">Upload Image</label>
+     <input type="file" class="form-control" value="{{ ring.casualring_image }}" name="casualring_image">
+    </div>
+   </div>
+
+   <div class="row mb-3 col-6">
+    <div class="col-md-12">
+     <!-- Price Field -->
+     <label for="casualring_price" class="form-label">Enter Price</label>
+     <input type="number" class="form-control" value="{{ ring.casualring_price }}" name="casualring_price">
+    </div>
+   </div>
+  </div>
+
+  <div class="row mb-3">
+   <div class="col-md-12">
+    <!-- Description Field -->
+    <label for="casualring_text" class="form-label">Enter Description</label>
+    <textarea class="form-control" name="casualring_text" rows="3" required>{{ ring.casualring_text }}</textarea>
+   </div>
+  </div>
+
+  <div class="text-center">
+   <button type="submit" class="btn btn-primary">Update Casual Ring</button>
+  </div>
+ </form>
+</div>
+
+{% include "admin/Footer.html" %}

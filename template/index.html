@@ -1,0 +1,261 @@
+{% include "nav.html" %}
+
+
+<!-- carousel -->
+<div id="carouselExampleIndicators" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+      aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+      aria-label="Slide 2"></button>
+  </div>
+  <div class="carousel-inner">
+    {% for i in index_Slider %}
+    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+      <img src="{{ i.image_index_Slider.url }}" class="d-block w-100" style="height: 500px;" alt="Slider Image">
+    </div>
+    {% endfor %}
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- NewIns-BestSellers-heading  -->
+<div class="heading my-5 text-center">
+  <ul class="list-unstyled NewIns-BestSellers-ul d-inline-flex align-items-center">
+    <li class="d-inline-block me-3 NewIns-li">
+      <a href="#" class="text-decoration-none NewIns-a">New Ins</a>
+    </li>
+    <li class="divider"></li>
+    <li class="d-inline-block ms-3 BestSellers-li">
+      <a href="#" class="text-decoration-none BestSellers-a">Best Sellers</a>
+    </li>
+  </ul>
+  <p>Freshen up your look!</p>
+</div>
+<div class="container mt-4">
+  <!-- Card Scrolling Container -->
+  <div id="cardScrollContainer" class="card-container">
+    <!-- Card 1 -->
+    {% for i in bast_slider %}
+    <div class="jewellery-card">
+      <img src="{{ i.bast_Slider_imgase.url }}" alt="Diamond">
+      <h5 class="mt-2">{{i.bast_Slider_Name}}</h5>
+      <p>{{i.bast_Slider_Description}}</p>
+      <p class="price">
+        <span class="text-decoration-line-through text-muted">${{i.bast_Slider_Price}}</span>
+        <span class="text-danger">$2500</span>
+      </p>
+    </div>
+    {% endfor %}
+
+
+
+    <!-- Card 6 -->
+
+  </div>
+
+
+  <!-- Pagination Buttons -->
+  <div class="pagination-btns">
+    <button id="prevBtn" class="btn border-dark rounded-0">&laquo;</button>
+    <button id="nextBtn" class="btn border-dark rounded-0">&raquo;</button>
+  </div>
+</div>
+
+<hr>
+<!-- Bestseller Category  -->
+
+<h2 class="Bestseller-category text-center mt-5">Bestseller Category</h2>
+<div class="container">
+
+  <div class="row gy-3 gx-3 my-3 category-container">
+    {% for i in Bestseller_Category_img %}
+    <div class="col-md-4">
+      <img src="{{ i.index_Bestseller_Category_img.url }}" class="img-fluid category-img-3  p-0" alt="">
+    </div>
+    {% endfor %}
+  </div>
+
+
+  <div class="explore-btn text-center my-5">
+    <a href="">
+      <button class="btn border-dark rounded-0">EXPLORE MORE</button>
+    </a>
+  </div>
+  <hr>
+
+  <!-- Shop by Category -->
+  <div class="container">
+    <h2 class="text-center mt-5 shop-by-category">Shop by Category</h2>
+    <p class="text-center">A one-stop shop for all of your jewellery needs!</p>
+  </div>
+  <div class="container my-5">
+    <div class="row justify-content-center g-4">
+      {% for i in shop_Category %}
+      <!-- Card 1 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="custom-card" data-aos="zoom-in" data-aos-duration="2000">
+          <img src="{{ i.image_Shop_Category.url }}" alt="Diamond">
+          <h5>{{i.Name_Shop_Category}}</h5>
+          <p>{{i.description_Shop_Category}}</p>
+          <a href="#" class="discover-btn">DISCOVER MORE</a>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+  <hr>
+
+  <!-- PNG Promises -->
+  <div class="container-fluid PNG-Promises my-5 py-5">
+    <h2 class="text-center">PNG Promises</h2>
+    <!-- <p class="text-center mb-5">Incredible rationales to shop with us!</p> -->
+    <ul class="text-center">
+      {% for i in save_index_png %}
+      <li class="list-unstyled d-inline-block me-5">
+        <img src="{{ i.index_Png.url }}">
+        <p>{{i.index_Png_Name}}</p>
+      </li>
+      {% endfor %}
+
+    </ul>
+  </div>
+
+  <hr>
+  <!-- video  -->
+  {% for i in save_video %}
+  <video class="object-cover" width="100%" height="360" playsinline autoplay loop muted controls>
+    <source src="/{{ i.bast_Slider_video.url }}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  {% endfor %}
+
+
+  <!-- about PNG Jewellers -->
+  <div class="container-fluid p-0">
+    <h2 class="text-center mt-5 PNG-Jewellers-heading">PNG Jewellers</h2>
+    <p class="text-center">A one-stop shop for all of your jewellery needs!</p>
+    <div class="container-fluid mb-5 PNG-Jewellers-container text-white p-5" data-aos="fade-right"
+      data-aos-duration="800">
+      {% for i in Png_Jewellers %}
+      <div class="row align-items-center"> <!-- Vertically center content -->
+        <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
+          <h3>{{i.index_Heiding}}</h3>
+          <p>{{i.PNG_Jewellers_text}}</p>
+          <a href="#"><button class="btn bg-white text-dark rounded-0 w-25">Read More</button></a>
+        </div>
+        <div class="col-lg-6 d-flex align-items-center justify-content-center">
+          <img src="{{ i.PNG_Jewellerss.url }}" alt="" class="img-fluid">
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <hr>
+  <!-- Store Locator -->
+  <div class="container-fluid my-5">
+    <h2 class="text-center mt-5 Store-Locator-heading">Store Locator</h2>
+    <!-- <p class="text-center">Find a jewellery store near you.</p> -->
+    <div class="container-fluid Store-Locator-content">
+      {% for i in store_Locator %}
+
+      <div class="row d-flex align-items-center justify-content-center p-0">
+        <div class="col-lg-6 d-flex align-items-center justify-content-center" data-aos="fade-right"
+          data-aos-duration="800">
+          <img src="{{ i.Store_Locator_img.url }}" alt="" class="img-fluid">
+        </div>
+        <div class="col-lg-6 p-5" data-aos="fade-left" data-aos-duration="800">
+          <h2 class="Store-Locator-sub-heading">{{i.Store_Locator_Heiding}}</h2>
+          <p>{{i.Store_Locator_Description}}</p>
+          <a href="#"><button class="btn bg-white text-dark rounded-0 w-50 border-dark">FIND
+              A STORE
+              LOCATION</button></a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <hr>
+  <!-- Celebrity Corner  -->
+  <div class="container-fluid">
+    <h2 class="text-center mt-5 Store-Locator-heading">Celebrity Corner</h2>
+    <!-- <p class="text-center">Explore what your favourite stars adore!</p> -->
+    <div class="container-fluid">
+      {% for i in celebrity_Corner %}
+      <div class="row d-flex align-items-center justify-content-center p-0">
+        <div class="col-lg-6">
+          <h2>{{ i.Celebrity_Corner_Heiding }}</h2>
+          <p>{{ i.Celebrity_Corner_Description }}</p>
+        </div>
+        <div class="col-6 col-lg-3" style="margin-right: -24px;">
+          <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+            <div class="carousel-inner">
+              <div class="carousel-item active celebrities-slider1">
+                <img src="{{ i.Celebrity_Corner_img.url }}" class="d-block w-100" alt="Madhuri Dixit">
+              </div>
+              <div class="carousel-item celebrities-slider1">
+                <img src="{{ i.Celebrity_Corner_img1.url }}" class="d-block w-100" alt="Mitali">
+              </div>
+              <div class="carousel-item celebrities-slider1">
+                <img src="{{ i.Celebrity_Corner_img.url }}" class="d-block w-100" alt="Ravina Tandal">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="col-lg-12">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+              <div class="carousel-inner">
+                <div class="carousel-item active celebrities-slider2">
+                  <img src="{{ i.Celebrity_Corner_img3.url }}" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item celebrities-slider2">
+                  <img src="{{ i.Celebrity_Corner_img2.url }}" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item celebrities-slider2">
+                  <img src="{{ i.Celebrity_Corner_img3.url }}" class="d-block w-100" alt="...">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+              <div class="carousel-inner">
+                <div class="carousel-item active celebrities-slider3">
+                  <img src="{{ i.Celebrity_Corner_img2.url }}" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item celebrities-slider3">
+                  <img src="{{ i.Celebrity_Corner_img3.url }}" class="d-block w-100" alt="...">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</div>
+
+
+<!-- hr -->
+<div class="custom-hr">
+  <div class="line"></div>
+  <div class="center-logo">
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS4q3a7SokAsnb4OjvSs9xOaCUZyg0HC5nWqBEaN-6Xhj7yYMFK"
+      alt="Logo" class="img-fluid">
+  </div>
+  <div class="line"></div>
+</div>
+</div>
+{% include "footer.html" %}

@@ -1,0 +1,56 @@
+{% include 'admin/Navbar.html' %}
+
+
+<div class="container mt-5">
+ <a href="/admin/Lariat_Necklace_Home" class="m-3">
+  <button class="btn btn-success">back</button>
+ </a>
+
+
+ <div class="row justify-content-center">
+  <div class="col-10 col-md-8 col-lg-6">
+   <h4 class="text-center p-4 text-danger">Add Question's</h4>
+   <form class="border p-5 bg-light" action="/admin/lariat_question/" method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+     <label for="question" class="form-label">Write Question</label>
+     <input type="text" class="form-control" id="question" placeholder="Enter your question" name="Question" required>
+    </div>
+    <div class="d-grid">
+     <button type="submit" class="btn btn-dark text-white">Add</button>
+    </div>
+   </form>
+  </div>
+ </div>
+ <h3 class="m-3 text-primary">All list</h3>
+ <div class="table-responsive">
+  <table class="table table-bordered table-hover">
+   <thead class="table-light">
+    <tr>
+     <th scope="col">id</th>
+     <th scope="col">Delete</th>
+     <th scope="col">Edit</th>
+     <th scope="col">Question</th>
+    </tr>
+   </thead>
+   <tbody>
+    {% for i in data %}
+    <tr>
+     <td>{{forloop.counter}}</td>
+     <td>
+      <a href="/admin/delete_question_lariat_neck/?id={{ i.id }}" onclick="return confirm('Are you sure..?')">
+       <i class="bi bi-trash fs-3 text-danger"></i>
+      </a>
+     </td>
+     <td>
+      <a href="/admin/edit_qusetion_lariat_neck/?id={{i.id}}"><i class="bi bi-pencil-square fs-3 text-success"></i></a>
+     </td>
+     <td>{{i.Question}}</td>
+    </tr>
+    {% endfor %}
+   </tbody>
+  </table>
+ </div>
+</div>
+
+{% include 'admin/Footer.html' %}

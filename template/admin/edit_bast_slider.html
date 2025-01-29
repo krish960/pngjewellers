@@ -1,0 +1,59 @@
+{% include 'admin/Navbar.html' %}
+
+<div class="container my-5">
+ <div class="row justify-content-center">
+  <div class="col-lg-6 col-md-8 col-sm-12">
+   <div class="card shadow-sm">
+    <div class="card-body">
+     <h5 class="card-title text-center mb-4">Edit Product Details</h5>
+
+     <form action="/admin/update_info_bast_slider/" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input type="hidden" name="id" value="{{ edit_info.id }}">
+
+      <!-- Card Image -->
+      <div class="mb-3">
+       <label for="cardImage" class="form-label">Current Image</label>
+       <!-- Display the current image -->
+       <div class="mb-2">
+        <img src="{{ edit_info.bast_Slider_imgase.url }}" alt="Current Image" class="img-thumbnail"
+         style="max-width: 150px;">
+       </div>
+       <!-- File input for new image -->
+       <label for="cardImage" class="form-label">Select New Image</label>
+       <input type="file" class="form-control" id="cardImage" name="bast_Slider_imgase" accept="image/*">
+      </div>
+
+      <!-- Image Title -->
+      <div class="mb-3">
+       <label for="imgTitle" class="form-label">Image Name</label>
+       <input type="text" class="form-control" id="imgTitle" value="{{ edit_info.bast_Slider_Name }}"
+        name="bast_Slider_Name" placeholder="Enter image title" required>
+      </div>
+
+      <!-- Latest Price -->
+      <div class="mb-3">
+       <label for="latestPrice" class="form-label">Latest Price</label>
+       <input type="number" class="form-control" id="latestPrice" name="bast_Slider_Price"
+        placeholder="Enter latest price" value="{{ edit_info.bast_Slider_Price }}" required>
+      </div>
+
+      <!-- Old Price -->
+      <div class="mb-3">
+       <label for="Description" class="form-label">Old Description</label>
+       <input type="text" class="form-control" value="{{ edit_info.bast_Slider_Description }}" id="oldPrice"
+        name="bast_Slider_Description" placeholder="Enter new Description">
+      </div>
+
+      <!-- Submit Button -->
+      <div class="d-grid">
+       <button type="submit" class="btn btn-primary">Update</button>
+      </div>
+     </form>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+
+{% include 'admin/Footer.html' %}

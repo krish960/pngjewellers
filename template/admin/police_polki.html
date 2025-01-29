@@ -1,0 +1,73 @@
+{% include "admin/Navbar.html" %}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .box {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        border-radius: 15px;
+        padding: 30px;
+        background: linear-gradient(145deg, #ffffff, #f3f3f3);
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+    }
+
+    
+    .box a {
+        text-decoration: none;
+        color: #333;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .box a:hover {
+        color: #ff6600;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    @media (max-width: 768px) {
+        .box {
+            padding: 20px;
+        }
+
+        .box a {
+            font-size: 16px;
+        }
+    }
+</style>
+
+<div class="container">
+    <h1 class="text-center my-4">All Police Polki Links</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="box">
+                <a href="/admin/Police_Polki_Slider/">Police Polki Slider</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="box">
+                <a href="/admin/Police_Polki_Cards/">Police Polki Cards</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include "admin/Footer.html" %}

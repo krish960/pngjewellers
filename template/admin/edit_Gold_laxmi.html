@@ -1,0 +1,58 @@
+{% include 'admin/Navbar.html' %}
+
+<div class="container my-5">
+ <div class="row justify-content-center">
+  <div class="col-lg-6 col-md-8 col-sm-12">
+   <div class="card shadow-lg border-0">
+    <div class="card-header bg-gradient-primary text-white text-center py-3">
+     <h4 class="fw-bold">Edit Item Details</h4>
+    </div>
+    <div class="card-body bg-light">
+     <form action="/admin/update_Gold_laxmi/" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input type="hidden" name="id" value="{{ old_Data.id }}">
+
+      <!-- Current Image -->
+      <div class="mb-4 text-center">
+       <label for="currentImage" class="form-label fw-bold">Current Image</label>
+       <div class="mb-3">
+        <img src="{{ old_Data.Gold_laxmi_image.url }}" alt="Current Image"
+         class="img-thumbnail rounded-circle shadow-sm" style="width: 150px; height: 150px; object-fit: cover;">
+       </div>
+      </div>
+
+      <div class="mb-4">
+       <label for="cardImage" class="form-label fw-bold">Upload New Image (Optional)</label>
+       <input type="file" class="form-control form-control-lg" id="cardImage" name="Gold_laxmi_image" accept="image/*"
+        required>
+      </div>
+
+      <div class="mb-4">
+       <label for="imgTitle" class="form-label fw-bold">Image Title</label>
+       <input type="text" class="form-control form-control-lg" id="imgTitle"
+        value="{{ old_Data.Gold_laxmi_Description }}" name="Gold_laxmi_Description" placeholder="Enter image title"
+        required>
+      </div>
+
+      <div class="mb-4">
+       <label for="latestPrice" class="form-label fw-bold">Latest Price</label>
+       <input type="number" class="form-control form-control-lg" id="latestPrice" name="Gold_laxmi_Latest_price"
+        placeholder="Enter latest price" value="{{ old_Data.Gold_laxmi_Latest_price }}" step="0.01" required>
+      </div>
+
+
+
+      <div class="d-grid">
+       <button type="submit" class="btn btn-gradient-primary btn-lg shadow">Update</button>
+      </div>
+     </form>
+    </div>
+    <div class="card-footer bg-light text-center text-muted py-2">
+     <small><em>Please verify all details before submitting.</em></small>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+
+{% include 'admin/Footer.html' %}

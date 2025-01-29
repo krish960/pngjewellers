@@ -1,0 +1,63 @@
+{% include 'admin/Navbar.html' %}
+<style>
+ .bg-light {
+  padding-top: 40px;
+  padding-bottom: 40px;
+ }
+
+ .box {
+  background-color: #ffffff;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ .box a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  transition: color 0.3s ease;
+ }
+
+ .box:hover {
+  transform: scale(1.05);
+  background-color: #007bff;
+  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3);
+ }
+
+ .box:hover a {
+  color: #fff;
+ }
+</style>
+
+<div class="bg-light">
+ <h3 class="text-center mt-4 text-danger">Hoops and Huggies</h3>
+ <div class="container py-5">
+  <div class="row justify-content-center g-4">
+   <div class="col-5">
+    <div class="box">
+     <a href="/admin/HoopsBannerImg/">Add Banner Img</a>
+    </div>
+   </div>
+   <div class="col-5">
+    <div class="box">
+     <a href="/admin/Hoopscard_info/">Add Cart and Price</a>
+    </div>
+   </div>
+   <div class="col-5">
+    <div class="box">
+     <a href="/admin/hoops_articleanddescription/">Add article and description</a>
+    </div>
+   </div>
+   <div class="col-5">
+    <div class="box">
+     <a href="/admin/Queandans_Hoops/">Add questions and answers </a>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+{% include 'admin/Footer.html' %}

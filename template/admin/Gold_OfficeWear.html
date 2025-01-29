@@ -1,0 +1,98 @@
+{% include 'admin/Navbar.html' %}
+
+<div class="container py-5">
+ <!-- Page Header -->
+ <div class="text-center mb-5">
+  <h2 class="text-danger fw-bold">Gold Office Wear</h2>
+  <p class="text-muted fs-5">Efficiently manage your gold office wear products</p>
+ </div>
+
+ <!-- Product Form Section -->
+ <div class="card shadow-sm border-0 mb-5">
+  <div class="card-body p-4">
+   <h4 class="card-title text-center text-primary mb-4">Add New Product</h4>
+   <form action="/admin/Gold_Office_wear_save/" method="post" enctype="multipart/form-data" class="row g-3 border p-3">
+    {% csrf_token %}
+
+    <!-- Product Image -->
+    <div class="col-md-6">
+     <label for="productImage" class="form-label fw-semibold">Product Image</label>
+     <input type="file" class="form-control" id="productImage" name="productImage" accept="image/*" required>
+    </div>
+
+    <!-- Product Title -->
+    <div class="col-md-6">
+     <label for="productTitle" class="form-label fw-semibold">Product Title</label>
+     <input type="text" class="form-control" id="productTitle" name="productTitle" placeholder="Enter product title"
+      required>
+    </div>
+
+    <!-- Latest Price -->
+    <div class="col-md-6">
+     <label for="latestPrice" class="form-label fw-semibold">Latest Price</label>
+     <input type="number" class="form-control" id="latestPrice" name="latestPrice" placeholder="Enter latest price"
+      required>
+    </div>
+
+    <!-- Old Price -->
+    <div class="col-md-6">
+     <label for="oldPrice" class="form-label fw-semibold">Old Price</label>
+     <input type="number" class="form-control" id="oldPrice" name="oldPrice" placeholder="Enter old price">
+    </div>
+
+    <!-- Submit Button -->
+    <div class="col-12 text-center">
+     <button type="submit" class="btn btn-success px-4 py-2">Add Product</button>
+    </div>
+   </form>
+  </div>
+ </div>
+
+ <!-- Product Details Section -->
+ <div class="card shadow-sm border-0">
+  <div class="card-body p-4">
+   <h4 class="card-title text-center text-primary mb-4">Product Details</h4>
+   <div class="table-responsive">
+    <table class="table table-striped table-hover table-bordered align-middle">
+     <thead class="table-dark">
+      <tr>
+       <th scope="col">ID</th>
+       <th scope="col">Delete</th>
+       <th scope="col">Edit</th>
+       <th scope="col">Title</th>
+       <th scope="col">Latest Price</th>
+       <th scope="col">Old Price</th>
+       <th scope="col">Image</th>
+      </tr>
+     </thead>
+     <tbody>
+      {% for i in data %}
+      <tr>
+       <td>{{ forloop.counter }}</td>
+       <td>
+        <a href="/admin/delete_Gold_office_wear/?id={{ i.id }}" onclick="return confirm('Are you sure..?')"
+         class="text-danger">
+         <i class="bi bi-trash fs-5"></i>
+        </a>
+       </td>
+       <td>
+        <a href="/admin/Edit_Gold_office_wear/?id={{ i.id }}" class="text-success">
+         <i class="bi bi-pencil-square fs-5"></i>
+        </a>
+       </td>
+       <td>{{ i.productTitle }}</td>
+       <td>{{ i.latestPrice }}</td>
+       <td>{{ i.oldPrice }}</td>
+       <td>
+        <img src="/{{ i.productImage }}" alt="Product Image" class="img-thumbnail" style="max-width: 150px;">
+       </td>
+      </tr>
+      {% endfor %}
+     </tbody>
+    </table>
+   </div>
+  </div>
+ </div>
+</div>
+
+{% include 'admin/Footer.html' %}

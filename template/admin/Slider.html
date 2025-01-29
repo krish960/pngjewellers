@@ -1,0 +1,49 @@
+{% include "admin/Navbar.html" %}
+
+<div class="container mt-5">
+    <h1 class="text-center mt-5">Add Slider Images</h1>
+    <form action="/admin/save_index_Slider/" method="post" enctype="multipart/form-data"
+        class="p-4 shadow rounded bg-light">
+        {% csrf_token %}
+        <div class="row">
+            <div class="mb-3 col-md-6">
+                <label for="image" class="form-label">Add Image</label>
+                <input type="file" class="form-control" id="image" name="image_index_Slider" required>
+            </div>
+            <div class="mb-3 col-md-12 text-center">
+                <button class="btn btn-primary px-4">Save</button>
+            </div>
+        </div>
+    </form>
+
+    <h2 class="text-center mt-5">Existing Slider Images</h2>
+    <table class="table table-hover table-bordered mt-4 shadow-sm">
+        <thead class="table-dark">
+            <tr>
+                <th class="text-center">Action</th>
+                <th class="text-center">Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in index_Slider %}
+            <tr>
+                <td class="text-center align-middle">
+                    <a href="/admin/delete_slider/?id={{ i.id }}" onclick="return confirm('Are you sure..?')"
+                        class="text-danger">
+                        <i class="bi bi-trash-fill fs-5"></i>
+                    </a>
+                    <a href="/admin/edit_Slider/?id={{ i.id }}" onclick="return confirm('Are you sure..?')"
+                        class="text-success">
+                        <i class="bi bi-pencil-square"></i>
+                    </a>
+                </td>
+                <td class="text-center">
+                    <img src="/{{i.image_index_Slider}}" class="img-thumbnail" style="width: 75px; height: auto;">
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% include "admin/Footer.html" %}

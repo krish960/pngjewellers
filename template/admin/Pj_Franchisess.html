@@ -1,0 +1,87 @@
+{% include 'admin/Navbar.html' %}
+
+<style>
+    .table-container {
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 30px;
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+
+    .table th,
+    .table td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .table th {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .table tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    .action-btn {
+        background-color: #28a745;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .action-btn:hover {
+        background-color: #218838;
+    }
+
+    .footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #343a40;
+        color: white;
+    }
+</style>
+
+<div class="table-container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Action</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Occupation</th>
+                <th>City</th>
+                <th>Pincode</th>
+                <th>Investment Interest *</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in data %}
+            <tr>
+                <td>
+                    <a href="/admin/Edit_Pj_Franchisess/?id={{i.id}}"><button class="action-btn">Edit</button></a>
+                </td>
+                <td>{{i.firstName}}</td>
+                <td>{{i.email_address}}</td>
+                <td>{{i.phone_no}}</td>
+                <td>{{i.occupation}}</td>
+                <td>{{i.City_name}}</td>
+                <td>{{i.pincodes}}</td>
+                <td>{{i.investment}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% include 'admin/Footer.html' %}

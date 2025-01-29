@@ -1,0 +1,168 @@
+{% include "nav.html" %}
+<div class="container-fluide  ">
+  <!-- Small navbar1 row -->
+  <div class="row bg-light d-none d-md-block " style="height: 40px;">
+    <div class="col-md-12">
+      <small class="mt-2 ms-3 d-none d-md-block">
+        <a href="index.html" class="no-underline">Home</a>
+        <span class="text-secondary">></span>
+        <a href="All_Jewellery.html" class="no-underline">All Jewellery</a>
+
+      </small>
+    </div>
+  </div>
+  <!-- Small navbar2 row -->
+  <div class="d-none d-md-block">
+    <div class="row bg-dark">
+      <div class="col-md-1 d-flex align-items-center justify-content-center option_box text-white">
+        <ion-icon name="options-outline"></ion-icon>
+      </div>
+      <div class="col-md-2 option_box">
+        <div class="dropdown">
+          <button class="dropdown-btn mt-1 button_nav" onclick="toggleDropdown(event)">
+            Price
+            <span style="margin-left: 140px;">
+              <ion-icon name="chevron-down-outline"></ion-icon>
+            </span>
+          </button>
+          <div class="dropdown-content">
+            <label><input type="checkbox" value="20000"> Less than ₹20,000</label>
+            <label><input type="checkbox" value="25000"> ₹20,001 - ₹25,000</label>
+            <label><input type="checkbox" value="30000"> ₹25,001 - ₹30,000</label>
+            <label><input type="checkbox" value="35000"> ₹30,001 - ₹35,000</label>
+            <label><input type="checkbox" value="40000"> ₹35,001 - ₹40,000</label>
+            <label><input type="checkbox" value="45000"> ₹40,001 - ₹45,000</label>
+            <label><input type="checkbox" value="50000"> ₹45,001 - ₹50,000</label>
+            <label><input type="checkbox" value="100000"> ₹50,001 - ₹1,00,000</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2 option_box">
+        <div class="dropdown">
+          <button class="dropdown-btn mt-1 button_nav" onclick="toggleDropdown(event)">
+            Collections
+            <span style="margin-left: 90px;">
+              <ion-icon name="chevron-down-outline"></ion-icon>
+            </span>
+          </button>
+          <div class="dropdown-content">
+            <label><input type="checkbox" value="20000">
+              DiamondDiwaliOffers_100
+            </label>
+            <label><input type="checkbox" value="25000">
+              New Launch
+            </label>
+            <label><input type="checkbox" value="30000">
+              Diamond365PLUS
+            </label>
+            <label><input type="checkbox" value="35000">
+              ZODIAC
+            </label>
+            <label><input type="checkbox" value="40000">
+              ZODIACDiamond365PLUS
+            </label>
+            <label><input type="checkbox" value="40000">
+              Polmi Polki Collection
+            </label>
+            <label><input type="checkbox" value="40000">
+              Colour Stones
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2 option_box">
+        <div class="dropdown">
+          <button class="dropdown-btn mt-1 button_nav" onclick="toggleDropdown(event)">
+            Occasion
+            <span style="margin-left: 110px;"> <ion-icon name="chevron-down-outline"></ion-icon></span>
+          </button>
+          <div class="dropdown-content">
+            <label><input type="checkbox" value="20000">
+              Party Wear
+            </label>
+            <label><input type="checkbox" value="25000">
+              Daily Wear
+            </label>
+            <label><input type="checkbox" value="30000">
+              Officewear
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2 option_box">
+        <div class="dropdown">
+          <button class="dropdown-btn mt-1 button_nav" onclick="toggleDropdown(event)">Gifts
+            <span style="margin-left: 145px;"> <ion-icon name="chevron-down-outline"></ion-icon></span>
+          </button>
+          <div class="dropdown-content">
+            <label><input type="checkbox" value="30000">
+              For Her
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 option_box">
+        <div class="dropdown">
+          <button class="dropdown-btn mt-1 button_nav">
+            <u>More Filters + </u>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- select box -->
+  <div class="d-none d-md-block">
+    <div class="row row-color ">
+      <div class="col-md-8"></div>
+      <div class="col-md-4 d-flex justify-content-center align-items-center">
+        <select class="p-1" style="height: 34px; width: 270px;">
+          <option value="">Sort by</option>
+          <option value="">Popularity</option>
+          <option value="">Newly Listed</option>
+          <option value="">Price - High to Low</option>
+          <option value="">Price - Low to High</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- cart start -->
+
+<div class="container mb-3">
+  <!-- Card section start -->
+  <div class="row p-2">
+    <div class="col-md-12 mt-3">
+      <span class="text-dimond ms-2 d-none d-md-block" style="font-weight: 50;">Kids Bracelets<span
+          style="font-weight: 490; font-size: 27px;"> 15 Designs</span></span>
+      <span class="text-dimond1   ms-2 d-block d-md-none" style="font-weight: 10;">
+        All Jewellery<span style="font-weight: 490; font-size: 23px;">64 Designs</span>
+        <hr>
+      </span>
+    </div>
+  </div>
+  <!-- first row Cards -->
+
+
+  <div class="row ">
+
+    {% for i in Gold %}
+    <div class="col-6 col-md-3  mb-3">
+      <div class="product-card">
+        <div class="like-icon" onclick="toggleLike(this)">
+          <i class="far fa-heart"></i>
+        </div>
+        <img src="/{{i.Gold_GoldBracelets_image}}">
+        <div class="card-content mt-0 p-5">
+          <p>{{i.Gold_GoldBracelets_image_title}}</p>
+          <span class="price">₹{{i.Gold_GoldBracelets_latest_price}}</span>
+          <span class="original-price">₹{{i.Gold_GoldBracelets_old_price}}</span>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+
+</div>
+
+{% include "footer.html" %}

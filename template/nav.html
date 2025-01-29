@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jewellery Shop Website</title>
+  <!-- bootstrap cdn -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- fontawesome  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- aos cdn  -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- css  -->
+  <link rel="stylesheet" href="/static/css/style1.css">
+</head>
+
+<body>
+  <!-- nav1 start -->
+  <div class="container-fluid d-none d-md-block">
+    <div class="row">
+      <div class="navbar1 py-2">
+        <div class="container-fluid d-flex justify-content-between topbar">
+          <div>
+        <span>
+          <i class="fa-brands fa-whatsapp"></i>
+          <a href="https://wa.me/7823040317" class="text-white me-3" target="_blank">WhatsApp</a>
+        </span>
+            <span>
+              <i class="fa-solid fa-shop"></i>
+              <a href="/Store_Locator" class="text-white me-3">Store Locator</a>
+            </span>
+            <span>
+              <i class="fa-sharp-duotone fa-solid fa-handshake"></i>
+              <a href="/Pj_Franchise" class="text-white">PJ Franchise</a>
+            </span>
+          </div>
+          <div class="text-white legacy-since">
+            <span style="color: rgb(255, 238, 0);">LEGACY SINCE 1832</span>
+          </div>
+          <div>
+            <span>
+              <i class="fa-brands fa-stack-overflow"></i>
+              <a href="#" class="text-white">Metal Rates</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- nav1 end -->
+
+  <!-- nav2 start -->
+  <div class="container-fluid shadow-sm">
+    <div class="row">
+      <nav class="navbar navbar-expand-lg bg-white">
+        <div class="container-fluid col-12">
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="col-md-3 ">
+            <a class="navbar-brand" href="#">
+              <img src="https://d1put4x3vjlh9s.cloudfront.net/public/uploads/website/png_logo_1727074242.svg"
+                alt="Logo">
+            </a>
+          </div>
+
+          <div class="d-block d-md-none w-20">
+            <i class="fa-solid fa-shop"></i>
+          </div>
+
+
+          <div class="col-md-6 col-12">
+            <div class="input-group">
+              <input type="text" class="form-control search-bar" placeholder="What are you looking for?"
+                aria-label="Search">
+              <button class="btn btn-outline-secondary" type="button">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+          </div>
+          <div class="container-fluid d-block d-md-none">
+            <div class="row mt-1">
+              <div class="col-3">
+                <img
+                  src="https://d1put4x3vjlh9s.cloudfront.net/public/uploads/menus/menu-items/diamondwebp1839367312565997543webp__5017229951682762176.webp"
+                  style="width: 100%;height: 80px; text-align:center;" alt="">Diamond
+              </div>
+              <div class="col-3">
+                <img
+                  src="https://d1put4x3vjlh9s.cloudfront.net/public/uploads/menus/menu-items/category-braceletssvg73113979webp__19661282481161952371.webp"
+                  style="width: 100%; height: 80px; text-align:center;" alt="">Gold
+              </div>
+              <div class="col-3">
+                <img
+                  src="https://d1put4x3vjlh9s.cloudfront.net/public/uploads/menus/menu-items/category-earringssvg381177262webp__5110885741147064910.webp"
+                  style="width: 100%;height: 80px; text-align:center;" alt="">Silver
+              </div>
+              <div class="col-3">
+                <img
+                  src="https://d1put4x3vjlh9s.cloudfront.net/public/uploads/menus/menu-items/category-goldcoinsvg645968899webp__1734659259869681238.webp"
+                  style="width: 100%;height: 80px;  text-align:center;" alt="">Bullions
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-3 d-flex align-items-center justify-content-end account-list  ">
+
+            <div class="account-box mx-2 position-relative">
+              <a href="#" class="d-flex align-items-center text-dark " id="accountLink" style="text-decoration: none;">
+                <i class="fa-solid fa-user"></i>&nbsp; Account
+              </a>
+
+              <div class="account-popup position-absolute translate-middle-x d-none shadow">
+                <div class="popup-content ">
+                  <h3 class="text-dark ">Your Account</h3>
+                  <p class="text-dark">
+                    Track your orders, manage payment,<br>
+                    edit profile, and much more...
+                  </p>
+                  <hr>
+                  <a href="/login" class="btn btn1">Log In</a>
+                  <a href="/signup" class="btn btn2">Sign Up</a>
+                </div>
+              </div>
+            </div>
+
+
+            <a href="#" class="d-flex align-items-center mx-2 text-dark " style="text-decoration: none; "
+              class="wishlist">
+              <i class="fa-solid fa-heart"></i>&nbsp; Wishlist
+            </a>
+            <a href="#" class="d-flex align-items-center mx-2 text-dark d-block d-md-none"
+              style="text-decoration: none; " class="wishlist">
+              <i class="fa-solid fa-house"></i>&nbsp; Home
+            </a>
+            <a href="#" class="d-flex align-items-center mx-2 text-dark d-block d-md-none"
+              style="text-decoration: none; " class="wishlist">
+              <i class="fa-solid fa-table-list"></i>&nbsp; Categories
+            </a>
+
+
+            <a href="#" class="d-flex align-items-center mx-2 text-dark " data-bs-toggle="offcanvas"
+              data-bs-target="#cartSidebar" aria-controls="cartSidebar" style="text-decoration: none;" class="wishlist">
+              <i class="fa-solid fa-cart-shopping"></i>&nbsp;
+              <span class="badge ">0</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+
+      <div class="row mt-n4 ">
+        <div class="col-md-8  d-flex justify-content-center">
+          <nav class="navbar navbar-expand-lg">
+
+
+            <div class="offcanvas offcanvas-start col-12 " tabindex="-1" id="offcanvasNavbar"
+              aria-labelledby="offcanvasNavbarLabel">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title " id="offcanvasNavbarLabel">Jewellery Categories</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                  aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body  ">
+                <ul class="nav nav-underline flex-row col-md-12 col-3 ">
+                  <li class="nav-item">
+                    <a class="nav-link text-dark" href="/all_jewellery">All Jewellery</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link text-dark" href="#" data-bs-toggle="modal"
+                      data-bs-target="#diamondModal">Diamond</a>
+                  </li>
+
+                  <div class="modal fade " id="diamondModal" data-bs-backdrop="false" tabindex="-1"
+                    aria-labelledby="diamondModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                      <div class="modal-content">
+                        <div class="modal-header bg-light">
+                          <h5 class="modal-title fw-bold" id="diamondModalLabel">Shop Diamond Jewellery</h5>
+                          <button type="button " class="btn-close btn " data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body ">
+                          <div class="row">
+                            <div class="col-md-3 border-end ">
+                              <ul class="list-unstyled ">
+
+                                <li><a href="#" class="text-dark text-decoration-none"
+                                    data-category="earrings">Earrings</a></li>
+                                <li><a href="#" class="text-dark text-decoration-none" data-category="rings">Rings</a>
+                                </li>
+                                <li><a href="#" class="text-dark text-decoration-none"
+                                    data-category="necklaces">Necklaces</a></li>
+                                <li><a href="#" class="text-dark text-decoration-none"
+                                    data-category="pendant">Pendant</a>
+                                </li>
+                                <li><a href="#" class="text-dark text-decoration-none"
+                                    data-category="mangalsutra">Mangalsutra</a></li>
+                                <li><a href="#" class="text-dark text-decoration-none"
+                                    data-category="bracelets">Bracelets
+                                    and
+                                    Bangles</a></li>
+                                <li><a href="#" class="text-dark text-decoration-none"
+                                    data-category="kurta-button">Kurta
+                                    Button</a>
+                                </li>
+                                <li><a href="#" class="text-dark text-decoration-none"
+                                    data-category="cufflinks">Cufflinks</a></li>
+                                <li><a href="#" class="text-dark text-decoration-none"
+                                    data-category="nosepin">Nosepin</a>
+                                </li>
+                              </ul>
+                            </div>
+                            <div class="col-md-5" id="styleContent">
+                              <h6 class="fw-bold mb-3">Shop by Style</h6>
+                              <ul class="list-unstyled d-flex flex-column gap-2">
+
+                              </ul>
+                            </div>
+                            <div class="col-md-4" id="typeContent">
+                              <h6 class="fw-bold mb-3">Shop by Type</h6>
+                              <ul class="list-unstyled">
+
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <li class="nav-item position-relative">
+                    <a class="nav-link text-dark" href="#" id="collectionsDropdown" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      Gold
+                    </a>
+                    <div class="dropdown-menu p-4 shadow border-0 col-12" aria-labelledby="collectionsDropdown"
+                      style="min-width: 700px;">
+                      <div class="row">
+                        <div class="col-md-4 col-4">
+                          <h6 class="fw-bold mb-3">Shop Categories</h6>
+                          <ul class="list-unstyled">
+                            <li><a class="dropdown-item" href="#" data-category="gold-rings">Gold Rings</a></li>
+                            <li><a class="dropdown-item" href="#" data-category="gold-earrings">Gold Earrings</a></li>
+                            <li><a class="dropdown-item" href="#" data-category="gold-bracelets">Gold Bracelets</a></li>
+                          </ul>
+                        </div>
+                        <div class="col-md-4 col-4" id="shopByStyle">
+                          <h6 class="fw-bold mb-3">Shop by Style</h6>
+                          <ul class="list-unstyled">
+
+                          </ul>
+                        </div>
+                        <div class="col-md-4 col-4" id="shopByType">
+                          <h6 class="fw-bold mb-3">Shop by Type</h6>
+                          <ul class="list-unstyled">
+
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="nav-item position-relative  ">
+                    <a class="nav-link text-dark" href="#" id="collectionsDropdown" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      Bullions
+                    </a>
+                    <!-- <a class="nav-link text-dark" href="/bullions">
+                      Bullions
+                    </a> -->
+                    <div class="dropdown-menu p-4 shadow border-0 col-12" aria-labelledby="collectionsDropdown"
+                      style="min-width: 500px;">
+                      <div class="row">
+                        <div class="col-md-4 col-6">
+                          <h6 class="fw-bold mb-3">Shop Categories</h6>
+                          <ul class="list-unstyled">
+                            <li><a class="dropdown-item" href="#" data-category="gold-coin">Gold Coin</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#" data-category="gold-vedhani">Gold Vedhani</a></li>
+                            <li><a class="dropdown-item" href="#" data-category="silver-coin">Silver Coin</a></li>
+                          </ul>
+                        </div>
+                        <div class="col-md-8 col-6" id="shopByTypeGold">
+                          <h6 class="fw-bold mb-3">Shop by Type</h6>
+                          <ul class="list-unstyled">
+                            <!-- Dynamic content for "Shop by Type" will be populated here -->
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+
+
+
+                  <li class="nav-item position-relative">
+                    <a class="nav-link text-dark" href="/collection" id="collectionsDropdown" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      Collections
+                    </a>
+                    <div class="dropdown-menu p-4 shadow border-0" aria-labelledby="collectionsDropdown"
+                      style="min-width: 600px;">
+                      <div class="row">
+                        <div class="col-md-4 col-4">
+                          <h6 class="fw-bold mb-3">New Arrivals</h6>
+                          <ul class="list-unstyled">
+                            <li><a href="#" class="text-dark text-decoration-none">New Arrival - Diamond Jewellery</a>
+                            </li>
+                            <li><a href="/Arrival_goldjewellery" class="text-dark text-decoration-none">New Arrival
+                                - Gold Jewellery</a></li>
+                            <li><a href="/Mangalsutra_Mahaotsave" class="text-dark text-decoration-none">Mangalsutra
+                                Mahotsav</a></li>
+                            <li><a href="/EIINA" class="text-dark text-decoration-none">EIINA</a></li>
+                            <li><a href="/Necklace_Mahotsav"
+                                class="text-dark text-decoration-none">Necklace-Mahostav</a>
+                            </li>
+                          </ul>
+                        </div>
+
+                        <div class="col-md-4 col-4">
+                          <h6 class="fw-bold mb-3">Trending Collections</h6>
+                          <ul class="list-unstyled">
+                            <li><a href="/diamond_diwalisale" class="text-dark text-decoration-none">Diamond Jewellery
+                                Diwali Sale</a>
+                            </li>
+                            <li><a href="/swarajya_collecations" class="text-dark text-decoration-none">Swarajya
+                                Collections</a></li>
+                            <li><a href="/saptam_collecation" class="text-dark text-decoration-none">saptam
+                                collection</a></li>
+                          </ul>
+                        </div>
+
+                        <div class="col-md-4 col-4 ">
+                          <h6 class="fw-bold mb-3">Popular Collections</h6>
+                          <ul class="list-unstyled">
+                            <li><a href="/Aarya" class="text-dark text-decoration-none">Aarya</a></li>
+                            <li><a href="/zodias" class="text-dark text-decoration-none">Zodiac</a></li>
+                            <li><a href="/color_stone" class="text-dark text-decoration-none">Colour
+                                Stones Collection</a></li>
+                            <li><a href="/police_polki"
+                                class="text-dark text-decoration-none">polmi-polki-collection</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+
+
+
+                  <li class="nav-item">
+                    <a class="nav-link text-dark" href="/investors">Investors</a>
+                  </li>
+                </ul>
+
+
+
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+
+
+
+
+
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="cartSidebar" aria-labelledby="cartSidebarLabel">
+        <div class="offcanvas-header bg-warning">
+          <h5 class="offcanvas-title text-dark" id="cartSidebarLabel">
+            Your Cart <i class="fa-solid fa-cart-shopping"></i>
+          </h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Collapse"></button>
+        </div>
+        <div class="offcanvas-body">
+          <p style="font-size: 30px;">Shopping cart (0)</p>
+        </div>
+      </div>
+    </div>
+  </div>

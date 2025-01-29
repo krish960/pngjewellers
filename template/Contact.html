@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - PNG Jewellers</title>
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-rbsA2VBKQdGVlxXoA2JLm+e9pUu00xZb3Ovbt+0kCGsWE7q1tFktj0gBOIfUXzZh" 
+        crossorigin="anonymous">
+</head>
+<body>
+
+{% include "nav.html" %}
+
+<div class="container my-5">
+    <div class="row gy-4">
+        <div class="col-lg-6">
+            <h1>Contact Us</h1>
+            <form action="/submit-form" method="POST" class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label for="full-name" class="form-label">Full Name *</label>
+                    <input type="text" id="full-name" name="full-name" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address *</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="enquiry-type" class="form-label">Enquiry Type *</label>
+                    <select id="enquiry-type" name="enquiry-type" class="form-select" required>
+                        <option value="" selected>Select...</option>
+                        <option value="general">General Enquiry</option>
+                        <option value="support">Customer Support</option>
+                        <option value="feedback">Feedback</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message *</label>
+                    <textarea id="message" name="message" rows="5" class="form-control" required></textarea>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input type="checkbox" name="updates" value="yes" class="form-check-input" id="updates">
+                    <label class="form-check-label" for="updates">
+                        I would like to receive updates from PNG Jewellers using any method(s) I have provided above.
+                    </label>
+                </div>
+
+                <p>By submitting this form, I certify that I have read and accepted the <a href="/privacy-policy" target="_blank">Privacy Policy</a> of PNG Jewellers.</p>
+
+                <button type="submit" class="btn btn-primary w-100">Submit</button>
+            </form>
+        </div>
+
+        <div class="col-lg-6">
+            <div>
+                <h2>Corporate Office Address</h2>
+                <p>PNG Jewellers Ltd<br>PNG House, 694, Narayan Peth, Laxmi Road,<br>Pune 411030, Maharashtra, India</p>
+
+                <h3>Call Us</h3>
+                <p>+1800 4123 0976</p>
+                <p>Monday - Saturday: 10:00am to 6:00pm</p>
+
+                <h3>Write Us</h3>
+                <p><a href="mailto:customerservice@pngadgil.com">customerservice@pngadgil.com</a></p>
+
+                <h3>Follow Us</h3>
+                <p>Social Media Links Here</p>
+
+                <h3>Visit Us</h3>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.736524566989!2d73.85309731525838!3d18.5167266874019!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c0344c1bbda7%3A0x8dcf4c7b5af9b4d!2sPNG%20House!5e0!3m2!1sen!2sin!4v1604577345463!5m2!1sen!2sin" 
+                    allowfullscreen="" 
+                    loading="lazy"
+                    class="w-100"
+                    style="height: 300px; border: none;">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include "footer.html" %}
+
+<!-- Bootstrap JS -->
+<script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+3oDjcR3zckh/x4pD3Yf5BrbTGv4c" 
+    crossorigin="anonymous"></script>
+</body>
+</html>

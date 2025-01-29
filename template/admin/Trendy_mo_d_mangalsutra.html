@@ -1,0 +1,61 @@
+{% include 'admin/Navbar.html' %}
+<style>
+  .bg-light {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #f8f9fa; 
+  }
+
+  .box {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc; 
+    border-radius: 8px;
+    text-align: center;
+    padding: 20px;
+    transition: all 0.3s ease-in-out; 
+  }
+
+  .box a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #555; 
+    transition: color 0.3s ease;
+  }
+
+  .box:hover {
+    transform: scale(1.1); 
+    background-color: #007bff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+  }
+
+  .box:hover a {
+    color: #fff; 
+  }
+
+  .text-danger {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+</style>
+
+<div class="bg-light">
+  <h3 class="text-center mt-4 text-danger">Drops and Trendy mangalsutra</h3>
+  <div class="container py-5">
+    <div class="row justify-content-center g-4">
+      <!-- First Box -->
+      <div class="col-md-4 col-sm-6">
+        <div class="box">
+          <a href="/admin/Drops_mangalsutraCard/">Add Card</a>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="box">
+          <a href="/admin/Drop_mangalsutra_text/">Add Text</a>
+        </div>
+      </div>
+      </div>
+  </div>
+</div>
+
+{% include 'admin/Footer.html' %}

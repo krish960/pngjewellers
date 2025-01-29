@@ -1,0 +1,233 @@
+{% include "nav.html" %}
+
+<!-- main content -->
+<div class="container-fluide   ">
+
+  <!-- Small navbar1 row -->
+  <div class="row bg-light d-none d-md-block " style="height: 40px;">
+    <div class="col-md-12">
+      <small class="mt-2 ms-3 d-none d-md-block">
+        <a href="/" class="no-underline">Home</a>
+        <span class="text-secondary">></span>
+        <a href="#" class="no-underline">All Jewellery</a>
+        <a href="#" class="no-underline "> Lariat</a>
+      </small>
+    </div>
+  </div>
+
+  <!-- Small navbar2 row -->
+  <div class="d-none d-md-block">
+    <div class="row bg-dark">
+      <div class="col-md-1 d-flex align-items-center justify-content-center option_box text-white">
+        <ion-icon name="options-outline"></ion-icon>
+      </div>
+      <div class="col-md-2 option_box">
+        <div class="dropdown">
+          <button class="dropdown-btn mt-1 button_nav" onclick="toggleDropdown(event)">
+            Price
+            <span style="margin-left: 140px;">
+              <ion-icon name="chevron-down-outline"></ion-icon>
+            </span>
+          </button>
+          <div class="dropdown-content">
+            <label><input type="checkbox" value="20000"> Less than ₹20,000</label>
+            <label><input type="checkbox" value="25000"> ₹20,001 - ₹25,000</label>
+            <label><input type="checkbox" value="30000"> ₹25,001 - ₹30,000</label>
+            <label><input type="checkbox" value="35000"> ₹30,001 - ₹35,000</label>
+            <label><input type="checkbox" value="40000"> ₹35,001 and Above</label>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-md-2 option_box">
+        <div class="dropdown">
+          <button class="dropdown-btn mt-1 button_nav" onclick="toggleDropdown(event)">
+            occasion
+
+            <span style="margin-left: 110px;"> <ion-icon name="chevron-down-outline"></ion-icon></span>
+          </button>
+          <div class="dropdown-content">
+            <label><input type="checkbox" value="20000">
+              Party Wear
+
+
+            </label>
+            <label><input type="checkbox" value="20000">
+
+              Daily Wear
+
+            </label>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2 option_box">
+        <div class="dropdown">
+          <button class="dropdown-btn mt-1 button_nav" onclick="toggleDropdown(event)">Collections
+
+            <span style="margin-left: 145px;"> <ion-icon name="chevron-down-outline"></ion-icon></span>
+          </button>
+          <div class="dropdown-content">
+            <label><input type="checkbox" value="30000">
+              DiamondDiwaliOffers_100
+
+            </label>
+            <label><input type="checkbox" value="30000">
+
+              Diamond365PLUS
+            </label>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2 option_box">
+        <div class="dropdown">
+          <button class="dropdown-btn mt-1 button_nav" onclick="toggleDropdown(event)">
+            Gifts
+
+            <span style="margin-left: 90px;">
+              <ion-icon name="chevron-down-outline"></ion-icon>
+            </span>
+          </button>
+          <div class="dropdown-content">
+            <label><input type="checkbox" value="20000">
+              For Her
+            </label>
+
+
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-3 option_box">
+        <div class="dropdown">
+          <button class="dropdown-btn mt-1 button_nav">
+            <u>More Filters + </u>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- select box -->
+  <div class="d-none d-md-block">
+    <div class="row row-color ">
+      <div class="col-md-8"></div>
+      <div class="col-md-4 d-flex justify-content-center align-items-center">
+        <select class="p-1" style="height: 34px; width: 270px;">
+          <option value="">Sort by</option>
+          <option value="">Popularity</option>
+          <option value="">Newly Listed</option>
+          <option value="">Price - High to Low</option>
+          <option value="">Price - Low to High</option>
+        </select>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>
+
+<!-- cart start -->
+<div class="container mb-3">
+  <!-- Card section start -->
+  <div class="row p-2">
+    <div class="col-md-12 mt-3">
+      <span class="text-dimond ms-2 d-none d-md-block" style="font-weight: 50;">Diamond Lariat Necklaces <span
+          style="font-weight: 490; font-size: 27px;"> 8 Designs</span></span>
+
+
+      <span class="text-dimond1   ms-2 d-block d-md-none" style="font-weight: 10;">
+        Diamond Lariat Necklaces <span style="font-weight: 490; font-size: 23px;">8 Designs</span>
+
+        <hr>
+      </span>
+
+
+
+
+      <p class="p-2">Diamond lariat necklaces are the epitome of elegance and sophistication. Their delicate chains and
+        sparkling diamonds offer a unique and versatile design that can be dressed up or down. Whether you want to
+        elevate
+        your everyday look or add a touch of glamour to a special occasion, a diamond lariat necklace is a perfect
+        choice.
+        They also make a great gift for someone special, as they are timeless and will never go out of style.</p>
+    </div>
+  </div>
+
+  <!-- first row Cards -->
+  <div class="row ">
+
+
+    {% for i in cart %}
+    <div class="col-6 col-md-3  mb-3">
+      <div class="product-card1">
+        <div class="like-icon" onclick="toggleLike(this)">
+          <i class="far fa-heart"></i>
+        </div>
+        <img src="/{{i.productImage}}">
+        <div class="card-content mt-0 p-3">
+          <p>{{i.productTitle}}...</p>
+          <span class="price">₹{{i.latestPrice}}</span>
+          <span class="original-price">₹{{i.oldPrice}}</span>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+
+</div>
+
+<!-- containet  -->
+<div class="container">
+  <div class="row mt-2 mb-5">
+
+
+    <div class="col-md-12">
+
+      {% for i in arti %}
+      <b style="font-size: 20px; font-weight: 500;">{{i.articleHeading}}
+      </b><br>
+      <small>{{i.articleDescription}}.<br><br></small>
+      {% endfor %}
+
+
+      <hr class="mt-5 mb-4">
+
+
+
+      <b style="font-size: 20px; font-weight: 500;">FAQs about Diamond Lariat Necklace</b><br>
+      <br><br>
+
+      <small class="mb-4">
+
+        {% for i in que %}
+        <ion-icon name="caret-forward-outline"></ion-icon>Que.{{i.Question}}<br><br>
+        <br><br>
+        {% endfor %}
+      </small>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- hr -->
+<div class="custom-hr">
+  <div class="line"></div>
+  <div class="center-logo">
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS4q3a7SokAsnb4OjvSs9xOaCUZyg0HC5nWqBEaN-6Xhj7yYMFK"
+      alt="Logo" class="img-fluid">
+  </div>
+  <div class="line"></div>
+</div>
+
+{% include "footer.html" %}

@@ -1,0 +1,105 @@
+{% include 'admin/Navbar.html' %}
+
+<div class="container my-5">
+ <!-- Page Header -->
+ <div class="text-center mb-5">
+  <h2 class="text-gradient fw-bold"
+   style="background: linear-gradient(to right, #ff512f, #dd2476); -webkit-background-clip: text; color: transparent;">
+   Gold Daily Wear
+  </h2>
+  <p class="text-muted">Manage your gold party wear products efficiently</p>
+ </div>
+
+ <!-- Product Form -->
+ <div class="card shadow-sm border-0 mb-5">
+  <div class="card-body">
+   <h4 class="card-title text-center text-primary mb-4">Add New Product</h4>
+   <form action="/admin/Gold_daily_wear_save/" method="post" enctype="multipart/form-data" class="row g-4 border p-3">
+    {% csrf_token %}
+
+    <!-- Product Image -->
+    <div class="col-md-6">
+     <label for="productImage" class="form-label fw-bold">Product Image</label>
+     <input type="file" class="form-control shadow-sm rounded" id="productImage" name="productImage" accept="image/*"
+      required>
+    </div>
+
+    <!-- Product Title -->
+    <div class="col-md-6">
+     <label for="productTitle" class="form-label fw-bold">Product Title</label>
+     <input type="text" class="form-control shadow-sm rounded" id="productTitle" name="productTitle"
+      placeholder="Enter product title" required>
+    </div>
+
+    <!-- Latest Price -->
+    <div class="col-md-6">
+     <label for="latestPrice" class="form-label fw-bold">Latest Price</label>
+     <input type="number" class="form-control shadow-sm rounded" id="latestPrice" name="latestPrice"
+      placeholder="Enter latest price" required>
+    </div>
+
+    <!-- Old Price -->
+    <div class="col-md-6">
+     <label for="oldPrice" class="form-label fw-bold">Old Price</label>
+     <input type="number" class="form-control shadow-sm rounded" id="oldPrice" name="oldPrice"
+      placeholder="Enter old price">
+    </div>
+
+    <!-- Submit Button -->
+    <div class="col-12 text-center">
+     <button type="submit" class="btn btn-gradient px-5 py-2 shadow-sm rounded-pill"
+      style="background: linear-gradient(to right, #00b09b, #96c93d); color: white;">Add Product</button>
+    </div>
+   </form>
+  </div>
+ </div>
+
+ <!-- Product Details Table -->
+ <div class="card shadow-sm border-0">
+  <div class="card-body">
+   <h4 class="card-title text-center text-primary mb-4">Product Details</h4>
+   <div class="table-responsive">
+    <table class="table table-bordered table-hover table-striped align-middle">
+     <thead class="table-light">
+      <tr>
+       <th scope="col" style="width: 5%;">#</th>
+       <th scope="col" style="width: 10%;">Delete</th>
+       <th scope="col" style="width: 10%;">Edit</th>
+       <th scope="col">Title</th>
+       <th scope="col" style="width: 15%;">Latest Price</th>
+       <th scope="col" style="width: 15%;">Old Price</th>
+       <th scope="col" style="width: 20%;">Image</th>
+      </tr>
+     </thead>
+     <tbody>
+      {% for i in data %}
+      <tr>
+       <td>{{ forloop.counter }}</td>
+       <td>
+        <a href="/admin/delete_Gold_daily_wear/?id={{ i.id }}" onclick="return confirm('Are you sure..?')"
+         class="text-danger">
+         <i class="bi bi-trash-fill fs-5"></i>
+        </a>
+       </td>
+       <td>
+        <a href="/admin/Edit_Gold_daily_wear/?id={{ i.id }}" class="text-success">
+         <i class="bi bi-pencil-fill fs-5"></i>
+        </a>
+       </td>
+       <td>{{ i.productTitle }}</td>
+       <td>{{ i.latestPrice }}</td>
+       <td>{{ i.oldPrice }}</td>
+       <td>
+        <img src="/{{ i.productImage }}" alt="Product Image" class="img-fluid rounded shadow-sm"
+         style="max-width: 100px; height: auto;">
+       </td>
+      </tr>
+      {% endfor %}
+     </tbody>
+    </table>
+   </div>
+  </div>
+ </div>
+</div>
+
+{% include 'admin/Footer.html' %}

@@ -1,0 +1,801 @@
+{% include "nav.html" %}
+  <!-- main content -->
+  <div class="container-fluid">
+    <div class="slider-container">
+      <div class="slider">
+        {% for i in investors %}
+        <div class="slide">
+          <img
+            src="/{{ i.investors_image }}"
+            alt="Slide 1">
+        </div>
+        {% endfor %}
+      </div>
+      <div class="custom-hr">
+        <div class="line"></div>
+        <div class="center-logo">
+          <img
+            src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS4q3a7SokAsnb4OjvSs9xOaCUZyg0HC5nWqBEaN-6Xhj7yYMFK"
+            alt="Logo" class="img-fluid">
+        </div>
+        <div class="line"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content Section -->
+  <section>
+    <div class="container-fluid filter-content">
+      <!-- Navigation Menu -->
+      <div class="nav1">
+
+        <ul class="nav-list nav-tabs" id="investorsTab" role="tablist">
+
+          <li class="nav-item" role="presentation">
+            <a class="nav-link active p-2" id="annual-reports-tab" data-bs-toggle="tab" data-bs-target="#annual-reports"
+              role="tab" aria-controls="annual-reports" aria-selected="true">Annual Reports</a>
+          </li>
+
+          <li class="nav-item" role="presentation">
+            <a class="nav-link p-2" id="policies-tab" data-bs-toggle="tab" data-bs-target="#policies" role="tab"
+              aria-controls="policies" aria-selected="false">Policies</a>
+          </li>
+
+          <li class="nav-item" role="presentation">
+            <a class="nav-link p-2" id="corporate-governance-tab" data-bs-toggle="tab"
+              data-bs-target="#corporate-governance" type="button" role="tab" aria-controls="corporate-governance"
+              aria-selected="false">Corporate Governance</a>
+          </li>
+
+          <li class="nav-item" role="presentation">
+            <a class="nav-link p-2" id="Group-Companies-tab" data-bs-toggle="tab" data-bs-target="#Group-Companies"
+              type="button" role="tab" aria-controls="Group-Companies" aria-selected="false">Group Companies And
+              Subsidiaries</a>
+          </li>
+
+          <li class="nav-item" role="presentation">
+            <a class="nav-link p-2" id="Fixed-Deposit-Circular-tab" data-bs-toggle="tab"
+              data-bs-target="#Fixed-Deposit-Circular" type="button" role="tab" aria-controls="Fixed-Deposit-Circular"
+              aria-selected="false">Fixed Deposit Circular</a>
+          </li>
+
+          <li class="nav-item" role="presentation">
+            <a class="nav-link p-2" id="Financial-Results-tab" data-bs-toggle="tab" data-bs-target="#Financial-Results"
+              type="button" role="tab" aria-controls="Financial-Results" aria-selected="false">Financial Results</a>
+          </li>
+
+          <li class="nav-item" role="presentation">
+            <a class="nav-link p-2" id="Investor-Contacts-tab" data-bs-toggle="tab" data-bs-target="#Investor-Contacts"
+              type="button" role="tab" aria-controls="Investor-Contacts" aria-selected="false">Investor Contacts</a>
+          </li>
+
+          <li class="nav-item" role="presentation">
+            <a class="nav-link p-2" id="Disclosure-Under-tab" data-bs-toggle="tab" data-bs-target="#Disclosure-Under"
+              type="button" role="tab" aria-controls="Disclosure-Under" aria-selected="false">Disclosure Under
+              Regulation</a>
+          </li>
+
+          <li class="nav-item" role="presentation">
+            <a class="nav-link p-2" id="Shareholding-Pattern-tab" data-bs-toggle="tab"
+              data-bs-target="#Shareholding-Pattern" type="button" role="tab" aria-controls="Shareholding-Pattern"
+              aria-selected="false">Shareholding Pattern</a>
+          </li>
+
+          <li class="nav-item" role="presentation">
+            <a class="nav-link p-2" id="Stock-Exchange-Fillings-tab" data-bs-toggle="tab"
+              data-bs-target="#Stock-Exchange-Fillings" type="button" role="tab" aria-controls="Stock-Exchange-Fillings"
+              aria-selected="false">Stock Exchange Fillings</a>
+          </li>
+
+          <li class="nav-item" role="presentation">
+            <a class="nav-link p-2" id="Notice-and-out-Come-of-the-meet-tab" data-bs-toggle="tab"
+              data-bs-target="#Notice-and-out-Come-of-the-meet" type="button" role="tab"
+              aria-controls="Notice-and-out-Come-of-the-meet" aria-selected="false">Notice and out Come of the meet</a>
+          </li>
+
+          <li class="nav-item" role="presentation">
+            <a class="nav-link p-2" id="Press-Release-tab" data-bs-toggle="tab" data-bs-target="#Press-Release"
+              type="button" role="tab" aria-controls="Press-Release" aria-selected="false">Press Release</a>
+          </li>
+
+          <li class="nav-item" role="presentation">
+            <a class="nav-link p-2" id="Corporate-Social-Responsibility-tab" data-bs-toggle="tab"
+              data-bs-target="#Corporate-Social-Responsibility" type="button" role="tab"
+              aria-controls="Corporate-Social-Responsibility" aria-selected="false">Corporate Social Responsibility</a>
+          </li>
+
+          <li class="nav-item" role="presentation">
+            <a class="nav-link p-2" id="Reports-tab" data-bs-toggle="tab" data-bs-target="#Reports" type="button"
+              role="tab" aria-controls="Reports" aria-selected="false">Reports</a>
+          </li>
+        </ul>
+      </div>
+      <!-- Content Section -->
+      <div class="content">
+
+        <!-- Tab Content -->
+        <div class="tab-content mt-4" id="investorsTabContent">
+
+          <!-- Annual Reports Tab -->
+          <div class="tab-pane fade show active" id="annual-reports" role="tabpanel"
+            aria-labelledby="annual-reports-tab">
+            <h2>Annual Reports</h2>
+
+            {% for i in annual %}
+
+            <div class="report-item">
+              <img
+                src="/{{ i.annual_report }}"
+                alt="PDF Icon" class="icon">
+              <span>{{i.annual_report_details}}</span>
+              <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+              </a>
+            </div>
+            {% endfor %}
+
+            <!-- <div class="report-item">
+              <img
+                src="https://png.pngtree.com/png-clipart/20220612/original/pngtree-pdf-file-icon-png-png-image_7965915.png"
+                alt="PDF Icon" class="icon">
+              <span>Annual Report 2022-23</span>
+              <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+              </a>
+            </div> -->
+
+
+          </div>
+
+          <!-- Policies Tab -->
+          <div class="tab-pane fade" id="policies" role="tabpanel" aria-labelledby="policies-tab">
+            <h2>Policies</h2>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                  type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Corporate Social
+                  Responsibility Policy</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                  type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Risk Management
+                  Policy</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
+                  type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">POSH At
+                  WorkPlace</button>
+              </li>
+            </ul>
+
+            <div class="tab-content" id="myTabContent">
+
+              <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+                tabindex="0">
+                {% for i in policies %}
+
+                <div class="report-item">
+                  <img
+                    src="/{{ i.policies }}"
+                    alt="PDF Icon" class="icon">
+                  <span>{{i.policies_details}}</span>
+                  <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                    data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                    <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+                  </a>
+                </div>
+                {% endfor %}
+
+                <!-- <div class="report-item">
+                  <img
+                    src="https://png.pngtree.com/png-clipart/20220612/original/pngtree-pdf-file-icon-png-png-image_7965915.png"
+                    alt="PDF Icon" class="icon">
+                  <span>Annual Report 2022-23</span>
+                  <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                    data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                    <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+                  </a>
+                </div> -->
+
+              </div>
+
+
+
+              <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
+                tabindex="0">
+                {% for i in policies1 %}
+                <div class="report-item">
+                  <img
+                    src="/{{ i.policies1 }}"
+                    alt="PDF Icon" class="icon">
+                  <span>{{i.policies1_details}}</span>
+                  <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                    data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                    <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+                  </a>
+                </div>
+                {% endfor %}
+
+                <!-- <div class="report-item">
+                  <img
+                    src="https://png.pngtree.com/png-clipart/20220612/original/pngtree-pdf-file-icon-png-png-image_7965915.png"
+                    alt="PDF Icon" class="icon">
+                  <span>Annual Report 2022-23</span>
+                  <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                    data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                    <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+                  </a>
+                </div>
+
+                <div class="report-item">
+                  <img
+                    src="https://png.pngtree.com/png-clipart/20220612/original/pngtree-pdf-file-icon-png-png-image_7965915.png"
+                    alt="PDF Icon" class="icon">
+                  <span>Annual Report 2022-23</span>
+                  <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                    data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                    <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+                  </a>
+                </div> -->
+              </div>
+
+              <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab"
+                tabindex="0">
+                {% for i in post_policies %}
+                <div class="report-item">
+                  <img
+                    src="/{{ i.post_policies }}"
+                    alt="PDF Icon" class="icon">
+                  <span>{{ i.post_policies_details }}</span>
+                  <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                    data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                    <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+                  </a>
+                </div>
+                {% endfor %}
+
+                <!-- <div class="report-item">
+                  <img
+                    src="https://png.pngtree.com/png-clipart/20220612/original/pngtree-pdf-file-icon-png-png-image_7965915.png"
+                    alt="PDF Icon" class="icon">
+                  <span>Annual Report 2022-23</span>
+                  <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                    data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                    <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+                  </a>
+                </div> -->
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <!-- Corporate Governance Tab -->
+          <div class="tab-pane fade" id="corporate-governance" role="tabpanel"
+            aria-labelledby="corporate-governance-tab">
+            <h2>Corporate Governance</h2>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="Policies-tab" data-bs-toggle="tab"
+                  data-bs-target="#Policies-tab-pane" type="button" role="tab" aria-controls="Policies-tab-pane"
+                  aria-selected="true">Policies</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="Material-Documents-tab" data-bs-toggle="tab"
+                  data-bs-target="#Material-Documents-tab-pane" type="button" role="tab"
+                  aria-controls="Material-Documents-tab-pane" aria-selected="false">Material Documents</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="IPO-Documents-tab" data-bs-toggle="tab"
+                  data-bs-target="#IPO-Documents-tab-pane" type="button" role="tab"
+                  aria-controls="IPO-Documents-tab-pane" aria-selected="false">IPO Documents</button>
+              </li>
+            </ul>
+
+
+            <div class="tab-content" id="myTabContent">
+
+              <div class="tab-pane fade show active" id="Policies-tab-pane" role="tabpanel"
+                aria-labelledby="Policies-tab" tabindex="0">
+                {% for i in corporate %}
+
+                <div class="report-item">
+                  <img
+                    src="/{{ i.corporate }}"
+                    alt="PDF Icon" class="icon">
+                  <span>{{ i.corporate_details }}</span>
+                  <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                    data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                    <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+                  </a>
+                </div>
+                {% endfor %}
+
+                <!-- <div class="report-item">
+                  <img
+                    src="https://png.pngtree.com/png-clipart/20220612/original/pngtree-pdf-file-icon-png-png-image_7965915.png"
+                    alt="PDF Icon" class="icon">
+                  <span>Annual Report 2023-24</span>
+                  <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                    data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                    <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+                  </a>
+                </div>
+
+                <div class="report-item">
+                  <img
+                    src="https://png.pngtree.com/png-clipart/20220612/original/pngtree-pdf-file-icon-png-png-image_7965915.png"
+                    alt="PDF Icon" class="icon">
+                  <span>Annual Report 2022-23</span>
+                  <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                    data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                    <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+                  </a>
+                </div> -->
+
+              </div>
+
+
+
+              <div class="tab-pane fade" id="Material-Documents-tab-pane" role="tabpanel"
+                aria-labelledby="Material-Documents-tab" tabindex="0">
+                {% for i in material_documents %}
+                <div class="report-item">
+                  <img
+                    src="/{{ i.material_documents }}"
+                    alt="PDF Icon" class="icon">
+                  <span>{{ i.material_documents_details }}</span>
+                  <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                    data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                    <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+                  </a>
+                </div>
+                {% endfor %}
+
+                <!-- <div class="report-item">
+                  <img
+                    src="https://png.pngtree.com/png-clipart/20220612/original/pngtree-pdf-file-icon-png-png-image_7965915.png"
+                    alt="PDF Icon" class="icon">
+                  <span>Annual Report 2022-23</span>
+                  <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                    data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                    <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+                  </a>
+                </div>
+
+                <div class="report-item">
+                  <img
+                    src="https://png.pngtree.com/png-clipart/20220612/original/pngtree-pdf-file-icon-png-png-image_7965915.png"
+                    alt="PDF Icon" class="icon">
+                  <span>Annual Report 2022-23</span>
+                  <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                    data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                    <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+                  </a>
+                </div> -->
+              </div>
+
+              <div class="tab-pane fade" id="IPO-Documents-tab-pane" role="tabpanel" aria-labelledby="IPO-Documents-tab"
+                tabindex="0">
+                {% for i in ipo_documents %}
+                <div class="report-item">
+                  <img
+                    src="/{{ i.ipo_documents }}"
+                    alt="PDF Icon" class="icon">
+                  <span>{{ i.ipo_documents_details }}</span>
+                  <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                    data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                    <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+                  </a>
+                </div>
+                {% endfor %}
+                
+              </div>
+            </div>
+
+
+
+          </div>
+
+
+          <!-- Group Companies And Subsidiaries -->
+          <div class="tab-pane fade" id="Group-Companies" role="tabpanel" aria-labelledby="Group-Companies-tab">
+            <h2>Group Companies And Subsidiaries</h2>
+            {% for i in group %}
+            <div class="report-item">
+              <img
+                src="/{{ i.group_companies }}"
+                alt="PDF Icon" class="icon">
+              <span>{{ i.group_companies_details }}</span>
+              <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+              </a>
+            </div>
+            {% endfor %}
+
+            <!-- <div class="report-item">
+              <img
+                src="https://png.pngtree.com/png-clipart/20220612/original/pngtree-pdf-file-icon-png-png-image_7965915.png"
+                alt="PDF Icon" class="icon">
+              <span>Annual Report 2022-23</span>
+              <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+              </a>
+            </div> -->
+
+
+          </div>
+
+          <!-- Fixed Deposit Circular -->
+          <div class="tab-pane fade" id="Fixed-Deposit-Circular" role="tabpanel"
+            aria-labelledby="Fixed-Deposit-Circular-tab">
+            <h2>Fixed Deposit Circular</h2>
+          {%  for i in deposit %}
+            <div class="report-item">
+              <img
+                src="/{{ i.fixed_deposit }}"
+                alt="PDF Icon" class="icon">
+              <span>{{ i.fixed_deposit_details }}</span>
+              <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+              </a>
+            </div>
+            {% endfor %}
+
+            <!-- <div class="report-item">
+              <img
+                src="https://png.pngtree.com/png-clipart/20220612/original/pngtree-pdf-file-icon-png-png-image_7965915.png"
+                alt="PDF Icon" class="icon">
+              <span>Annual Report 2022-23</span>
+              <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+              </a>
+            </div> -->
+
+
+          </div>
+
+          <!-- Financial Results -->
+          <div class="tab-pane fade" id="Financial-Results" role="tabpanel" aria-labelledby="Financial-Results-tab">
+            <h2>Financial Results</h2>
+            {% for i in results %}
+            <div class="report-item">
+              <img
+                src="/{{ i.financial_results }}"
+                alt="PDF Icon" class="icon">
+              <span>{{ i.financial_results_details }}</span>
+              <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+              </a>
+            </div>
+            {% endfor %}
+
+          </div>
+
+          <!-- Investor Contacts -->
+          <div class="tab-pane fade" id="Investor-Contacts" role="tabpanel" aria-labelledby="Investor-Contacts-tab">
+            <h2>Investor Contacts</h2>
+
+            <div class="report">
+              <p class="brand-title-p"><strong>Contacts Information for Investor Grievance</strong></p>
+            {% for i in investors_contact %}
+
+              <div class="Investor-contact">
+                <p><strong>Name:{{ i.contact_name }}</strong></p>
+                <p><strong>Contact:</strong>{{ i.contact_mobile }}</p>
+                <p><strong>Email:-</strong>{{ i.contact_email }}</p>
+                <p><strong>Address:-</strong>{{ i.contact_address }}</p>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+
+          <!-- Disclosure Under Regulation 46 of SEBI (LODR) -->
+
+          <div class="tab-pane fade" id="Disclosure-Under" role="tabpanel" aria-labelledby="Disclosure-Under-tab">
+            <h2>Disclosure Under Regulation 46 of SEBI (LODR)</h2>
+            {% for i in regulation %}
+            <div class="report-item">
+              <img
+                src="/{{ i.disclosure }}"
+                alt="PDF Icon" class="icon">
+              <span>{{ i.disclosure_details }}</span>
+              <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+              </a>
+            </div>
+            {% endfor %}
+
+            <!-- <div class="report-item">
+              <img
+                src="https://png.pngtree.com/png-clipart/20220612/original/pngtree-pdf-file-icon-png-png-image_7965915.png"
+                alt="PDF Icon" class="icon">
+              <span>Annual Report 2022-23</span>
+              <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+              </a>
+            </div>
+
+            <div class="report-item">
+              <img
+                src="https://png.pngtree.com/png-clipart/20220612/original/pngtree-pdf-file-icon-png-png-image_7965915.png"
+                alt="PDF Icon" class="icon">
+              <span>Annual Report 2022-23</span>
+              <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+              </a>
+            </div> -->
+
+          </div>
+
+
+          <!-- Shareholding-Pattern -->
+          <div class="tab-pane fade" id="Shareholding-Pattern" role="tabpanel"
+            aria-labelledby="Shareholding-Pattern-tab">
+            <h2>Shareholding Pattern</h2>
+            <p class="brand-title-p"><strong>2024-25</strong></p>
+          {% for i in pattern %}
+            <div class="report-item">
+              <img
+                src="/{{ i.shareholding_pattern }}"
+                alt="PDF Icon" class="icon">
+              <span>{{ i.shareholding_pattern_details }}</span>
+              <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+              </a>
+            </div>
+            {% endfor %}
+
+            <!-- <div class="report-item">
+              <img
+                src="https://png.pngtree.com/png-clipart/20220612/original/pngtree-pdf-file-icon-png-png-image_7965915.png"
+                alt="PDF Icon" class="icon">
+              <span>Annual Report 2022-23</span>
+              <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+              </a>
+            </div>
+
+            <div class="report-item">
+              <img
+                src="https://png.pngtree.com/png-clipart/20220612/original/pngtree-pdf-file-icon-png-png-image_7965915.png"
+                alt="PDF Icon" class="icon">
+              <span>Annual Report 2022-23</span>
+              <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+              </a>
+            </div> -->
+
+            <!-- <div class="report-item">
+              <img
+                src="https://png.pngtree.com/png-clipart/20220612/original/pngtree-pdf-file-icon-png-png-image_7965915.png"
+                alt="PDF Icon" class="icon">
+              <span>Annual Report 2022-23</span>
+              <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+              </a>
+            </div> -->
+
+          </div>
+
+          <!-- Stock-Exchange-Fillings -->
+          <div class="tab-pane fade" id="Stock-Exchange-Fillings" role="tabpanel"
+            aria-labelledby="Stock-Exchange-Fillings-tab">
+            <h2>Stock Exchange Fillings</h2>
+            <p class="brand-title-p"><strong>2024-25</strong></p>
+          {% for i in stock %}
+            <div class="report-item">
+              <img
+                src="/{{ i.stock_exchange }}"
+                alt="PDF Icon" class="icon">
+              <span>{{ i.stock_exchange_details }}</span>
+              <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+              </a>
+            </div>
+            {% endfor %}
+
+            <!-- <div class="report-item">
+              <img
+                src="https://png.pngtree.com/png-clipart/20220612/original/pngtree-pdf-file-icon-png-png-image_7965915.png"
+                alt="PDF Icon" class="icon">
+              <span>Annual Report 2022-23</span>
+              <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+              </a>
+            </div>
+
+            <div class="report-item">
+              <img
+                src="https://png.pngtree.com/png-clipart/20220612/original/pngtree-pdf-file-icon-png-png-image_7965915.png"
+                alt="PDF Icon" class="icon">
+              <span>Annual Report 2022-23</span>
+              <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+              </a>
+            </div>
+
+            <div class="report-item">
+              <img
+                src="https://png.pngtree.com/png-clipart/20220612/original/pngtree-pdf-file-icon-png-png-image_7965915.png"
+                alt="PDF Icon" class="icon">
+              <span>Annual Report 2022-23</span>
+              <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+              </a>
+            </div> -->
+
+          </div>
+
+          <!-- Notice-and-out-Come-of-the-meet -->
+          <div class="tab-pane fade" id="Notice-and-out-Come-of-the-meet" role="tabpanel"
+            aria-labelledby="Notice-and-out-Come-of-the-meet-tab">
+            <h2>Notice and out Come of the meet</h2>
+            <p class="brand-title-p"><strong>2024-25</strong></p>
+          {% for i in notice %}
+            <div class="report-item">
+              <img
+                src="/{{ i.notice_outcome }}"
+                alt="PDF Icon" class="icon">
+              <span>{{ i.notice_outcome_details }}</span>
+              <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+              </a>
+            </div>
+            {% endfor %}
+
+            <!-- <div class="report-item">
+              <img
+                src="https://png.pngtree.com/png-clipart/20220612/original/pngtree-pdf-file-icon-png-png-image_7965915.png"
+                alt="PDF Icon" class="icon">
+              <span>Annual Report 2022-23</span>
+              <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+              </a>
+            </div>
+
+            <div class="report-item">
+              <img
+                src="https://png.pngtree.com/png-clipart/20220612/original/pngtree-pdf-file-icon-png-png-image_7965915.png"
+                alt="PDF Icon" class="icon">
+              <span>Annual Report 2022-23</span>
+              <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+              </a>
+            </div>
+
+            <div class="report-item">
+              <img
+                src="https://png.pngtree.com/png-clipart/20220612/original/pngtree-pdf-file-icon-png-png-image_7965915.png"
+                alt="PDF Icon" class="icon">
+              <span>Annual Report 2022-23</span>
+              <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+              </a>
+            </div> -->
+
+          </div>
+
+          <!-- Press Release -->
+          <div class="tab-pane fade" id="Press-Release" role="tabpanel" aria-labelledby="Press-Release-tab">
+            <h2>Press Release</h2>
+            <p class="brand-title-p"><strong>2024-25</strong></p>
+            {% for i in press %}
+            <div class="report-item">
+              <img
+                src="/{{ i.press_release }}"
+                alt="PDF Icon" class="icon">
+              <span>{{ i.press_release_details }}</span>
+              <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+              </a>
+            </div>
+            {% endfor %}
+
+            <!-- <div class="report-item">
+              <img
+                src="https://png.pngtree.com/png-clipart/20220612/original/pngtree-pdf-file-icon-png-png-image_7965915.png"
+                alt="PDF Icon" class="icon">
+              <span>Annual Report 2022-23</span>
+              <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+              </a>
+            </div> -->
+
+          </div>
+
+          <!-- Corporte Social Responsibility -->
+          <div class="tab-pane fade" id="Corporate-Social-Responsibility" role="tabpanel"
+            aria-labelledby="Corporate-Social-Responsibility-tab">
+            <h2>Corporate Social Responsibility</h2>
+            <p class="brand-title-p"><strong>CSR</strong></p>
+          {% for i in social %}
+            <div class="report-item">
+              <img
+                src="/{{ i.corporate_social }}"
+                alt="PDF Icon" class="icon">
+              <span>{{ i.corporate_social_details }}</span>
+              <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+              </a>
+            </div>
+            {% endfor %}
+
+            <!-- <div class="report-item">
+              <img
+                src="https://png.pngtree.com/png-clipart/20220612/original/pngtree-pdf-file-icon-png-png-image_7965915.png"
+                alt="PDF Icon" class="icon">
+              <span>Annual Report 2022-23</span>
+              <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+              </a>
+            </div> -->
+
+          </div>
+
+          <!-- Reports -->
+
+          <div class="tab-pane fade" id="Reports" role="tabpanel" aria-labelledby="Reports-tab">
+            <h2>Reports</h2>
+            <p class="brand-title-p"><strong>Reports</strong></p>
+            {% for i in reports %}
+            <div class="report-item">
+              <img
+                src="/{{ i.reports }}"
+                alt="PDF Icon" class="icon">
+              <span>{{ i.reports_details }}</span>
+              <a href="#" class="download-link download-btn" title="Download" id="downloadLink1"
+                data-file="pdfs/annual1.pdf" data-name="pdfs/annual1.pdf">
+                <img src="https://pic.onlinewebfonts.com/thumbnails/icons_367024.svg" alt="Download Icon">
+              </a>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container-fluid">
+    <div class="custom-hr">
+      <div class="line"></div>
+      <div class="center-logo">
+        <img
+          src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS4q3a7SokAsnb4OjvSs9xOaCUZyg0HC5nWqBEaN-6Xhj7yYMFK"
+          alt="Logo" class="img-fluid">
+      </div>
+      <div class="line"></div>
+    </div>
+  </div>
+
+{% include "footer.html" %}
+
+

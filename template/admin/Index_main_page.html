@@ -1,0 +1,77 @@
+{% include "admin/Navbar.html" %}
+
+<style>
+    .box {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        padding: 20px;
+        background-color: #fff;
+        text-align: center;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .box a {
+        text-decoration: none;
+        color: #000;
+        font-weight: bold;
+    }
+
+    .box a:hover {
+        color: #007bff;
+    }
+</style>
+
+
+<div class="container">
+<h1 class="text-center my-4">All Index Page Links</h1>
+
+    <div class="row gy-4">
+        <div class="col-md-4">
+            <div class="box">
+                <a href="/admin/Slider/">Slider</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="box">
+                <a href="/admin/Best_Slider/">Card_Slider </a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="box">
+                <a href="/admin/index_Bestseller_Category/">Bestseller Category</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="box">
+                <a href="/admin/index_Shop_Category/">Shop by Category</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="box">
+                <a href="/admin/index_PNG_Promises/">PNG Promises</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="box">
+                <a href="/admin/index_video/">Index video </a>
+            </div>
+        </div>
+        <div class="col-md-4">
+        	<div class="box">
+        		<a href="/admin/PNG_Jewellers/">PNG Jewellers</a>
+        	</div>
+        </div>
+        <div class="col-md-4">
+            <div class="box">
+                <a href="/admin/Store_Locator/">Store Locator</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="box">
+                <a href="/admin/Celebrity_Corner/">Celebrity Corner</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include "admin/Footer.html" %}

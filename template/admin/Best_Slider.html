@@ -1,0 +1,90 @@
+{% include "admin/Navbar.html" %}
+
+<div class="container mt-5">
+    <!-- Header Section -->
+    <h1 class="text-center mb-4 text-info">Add Slider</h1>
+
+    <!-- Form Section with Box Shadow -->
+    <div class="card shadow-lg p-4 mb-4 rounded">
+        <form action="/admin/index_bast_slider/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <!-- Form Row 1: Image Upload and Name -->
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <label for="image" class="form-label">Add Image</label>
+                    <input type="file" class="form-control" id="image" name="bast_Slider_imgase" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="price" class="form-label">Add Name</label>
+                    <input type="text" class="form-control" id="price" name="bast_Slider_Name"
+                        placeholder="Enter Product Name" required>
+                </div>
+            </div>
+
+            <!-- Form Row 2: Price Input -->
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <label for="price" class="form-label">Add Price</label>
+                    <input type="number" class="form-control" id="price" name="bast_Slider_Price"
+                        placeholder="Enter Product Price" required>
+                </div>
+            </div>
+
+            <!-- Form Row 3: Description -->
+            <div class="row mb-4">
+                <div class="col-md-12">
+                    <label for="bast_Slider_Description" class="form-label">Add Description</label>
+                    <textarea class="form-control" id="bast_Slider_Description" name="bast_Slider_Description" rows="3"
+                        placeholder="Enter description" required></textarea>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Save Jewellery</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Table for Displaying Existing Sliders with Box Shadow -->
+    <div class="mt-5">
+        <h3 class="text-center text-info mb-4">Existing Sliders</h3>
+        <div class="card shadow-lg p-4 rounded">
+            <table class="table table-hover table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Action</th>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in bast_slider %}
+                    <tr>
+                        <td>
+                            <a href="/admin/edit_bast_slider/?id={{ i.id }}" class="btn btn-sm btn-warning">Edit</a>
+                            <a href="/admin/delete_bast_slider/?id={{ i.id }}" class="btn btn-sm btn-danger"
+                                onclick="return confirm('Are you sure?');">Delete</a>
+                        </td>
+                        <td>
+                            <img src="/{{i.bast_Slider_imgase}}" width="50px" alt="Slider Image">
+                        </td>
+                        <td>{{ i.bast_Slider_Name }}</td>
+                        <td>{{ i.bast_Slider_Price }}</td>
+                        <td>{{ i.bast_Slider_Description }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="5" class="text-center">No items found.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% include "admin/Footer.html" %}

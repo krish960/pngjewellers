@@ -1,0 +1,60 @@
+{% include 'admin/Navbar.html' %}
+
+<div class="container mt-5">
+ <a href="/admin/Flexible_Bracelet/">
+  <button class="btn btn-success m-1">Back</button>
+ </a>
+ <h2 class="mb-4 p-3 text-center text-primary">Add Article</h2>
+ <form class="p-5 border m-3 bg-light" action="/admin/Flexible_Bracelet_artical_data/" method="post">
+  {% csrf_token %}
+  <!-- Article Heading -->
+  <div class="mb-3">
+   <label for="articleHeading" class="form-label">Article Heading</label>
+   <input type="text" class="form-control" id="articleHeading" name="articleHeading" placeholder="Enter article heading"
+    required>
+  </div>
+  <!-- Article Description -->
+  <div class="mb-3">
+   <label for="articleDescription" class="form-label">Article Description</label>
+   <textarea class="form-control" id="articleDescription" name="articleDescription" rows="5"
+    placeholder="Enter article description" required></textarea>
+  </div>
+  <!-- Submit Button -->
+  <button type="submit" class="btn btn-primary">Submit</button>
+ </form>
+ <h3 class="m-3 text-danger">All Artical list</h3>
+ <div class="table-responsive">
+  <table class="table table-bordered table-hover">
+   <thead class="table-light">
+    <tr>
+     <th scope="col">id</th>
+     <th scope="col">Delete</th>
+     <th scope="col">Edit</th>
+     <th scope="col">Article Heading</th>
+     <th scope="col">Article Description</th>
+    </tr>
+   </thead>
+   <tbody>
+    {% for i in data %}
+    <tr>
+     <td>{{forloop.counter}}</td>
+     <td>
+      <a href="/admin/delete_Flexible_Bracelet_artical/?id={{ i.id }}" onclick="return confirm('Are you sure..?')">
+       <i class="bi bi-trash fs-3 text-danger"></i>
+      </a>
+     </td>
+     <td>
+      <a href="/admin/edit_Flexible_Bracelet_artical/?id={{i.id}}"><i
+        class="bi bi-pencil-square fs-3 text-success"></i></a>
+     </td>
+     <td>{{i.articleHeading}}</td>
+     <td>{{i.articleDescription}}</td>
+    </tr>
+    {% endfor %}
+   </tbody>
+  </table>
+ </div>
+</div>
+
+
+{% include 'admin/Footer.html' %}

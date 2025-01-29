@@ -1,0 +1,62 @@
+{% include 'admin/Navbar.html' %}
+
+<div class="container my-5">
+ <div class="row justify-content-center">
+  <div class="col-lg-6 col-md-8 col-sm-12">
+   <div class="card shadow-lg border-0 rounded-3">
+    <div class="card-header bg-primary text-white text-center">
+     <h3>Edit Product Details</h3>
+    </div>
+    <div class="card-body p-4">
+     <form action="/admin/edit_Gold_plain_card_da/" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input type="hidden" name="id" value="{{ old_Data.id }}">
+
+      <!-- Current Image -->
+      <div class="mb-4">
+       <label for="currentImage" class="form-label fw-bold">Current Image</label>
+       <div class="text-center mb-3">
+        <img src="{{ old_Data.productImage.url }}" alt="Current Product Image" class="img-thumbnail rounded shadow-sm"
+         style="max-width: 250px;">
+       </div>
+      </div>
+
+      <!-- New Image -->
+      <div class="mb-4">
+       <label for="cardImage" class="form-label fw-bold">Select New Image</label>
+       <input type="file" class="form-control shadow-sm" id="cardImage" name="cardImage_edit" accept="image/*" required>
+      </div>
+
+      <!-- Image Title -->
+      <div class="mb-4">
+       <label for="imgTitle" class="form-label fw-bold">Image Title</label>
+       <input type="text" class="form-control border-primary shadow-sm" id="imgTitle"
+        value="{{ old_Data.productTitle }}" name="imgTitle_edit" placeholder="Enter image title" required>
+      </div>
+
+      <!-- Latest Price -->
+      <div class="mb-4">
+       <label for="latestPrice" class="form-label fw-bold">Latest Price</label>
+       <input type="number" class="form-control border-primary shadow-sm" id="latestPrice" name="latestPrice_edit"
+        placeholder="Enter latest price" value="{{ old_Data.latestPrice }}" required>
+      </div>
+
+      <!-- Old Price -->
+      <div class="mb-4">
+       <label for="oldPrice" class="form-label fw-bold">Old Price</label>
+       <input type="number" class="form-control border-primary shadow-sm" id="oldPrice" name="oldPrice_edit"
+        placeholder="Enter old price" value="{{ old_Data.oldPrice }}">
+      </div>
+
+      <!-- Submit Button -->
+      <div class="text-center">
+       <button type="submit" class="btn btn-success btn-lg px-4 py-2 shadow-sm">Update Product</button>
+      </div>
+     </form>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+
+{% include 'admin/Footer.html' %}

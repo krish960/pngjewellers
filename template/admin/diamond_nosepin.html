@@ -1,0 +1,91 @@
+{% include 'admin/Navbar.html' %}
+
+<div class="container mt-5">
+ <h2 class="text-center mb-4 text-warning">Add Diamond Nosepin Card's</h2>
+ <form action="/admin/nosepin_card_save/" method="post" enctype="multipart/form-data"
+  class="row g-3 p-5 border m-4 shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+  {% csrf_token %}
+  <!-- Product Image -->
+  <div class="col-md-12">
+   <label for="productImage" class="form-label fw-bold">Product Image</label>
+   <div class="input-group">
+    <span class="input-group-text"><i class="bi bi-image"></i></span>
+    <input type="file" class="form-control" id="productImage" name="productImage" accept="image/*" required>
+   </div>
+  </div>
+
+  <!-- Product Title -->
+  <div class="col-md-12">
+   <label for="productTitle" class="form-label fw-bold">Product Title</label>
+   <div class="input-group">
+    <span class="input-group-text"><i class="bi bi-type"></i></span>
+    <input type="text" class="form-control" id="productTitle" name="productTitle" placeholder="Enter product title"
+     required>
+   </div>
+  </div>
+
+  <!-- Latest Price -->
+  <div class="col-md-6">
+   <label for="latestPrice" class="form-label fw-bold">Latest Price</label>
+   <div class="input-group">
+    <span class="input-group-text"><i>&#8377;</i></span>
+    <input type="number" class="form-control" id="latestPrice" name="latestPrice" placeholder="Enter latest price"
+     required>
+   </div>
+  </div>
+
+  <!-- Old Price -->
+  <div class="col-md-6">
+   <label for="oldPrice" class="form-label fw-bold">Old Price</label>
+   <div class="input-group">
+    <span class="input-group-text"><i class="bi bi-tag"></i></span>
+    <input type="number" class="form-control" id="oldPrice" name="oldPrice" placeholder="Enter old price">
+   </div>
+  </div>
+
+  <!-- Submit Button -->
+  <div class="col-12 text-center">
+   <button type="submit" class="btn btn-primary btn-lg px-5">Add Product</button>
+  </div>
+ </form>
+
+ <div class="mt-3 p-5">
+  <h3 class="text-success">All Card and Details</h3>
+  <table class="table table-striped border">
+   <thead>
+    <tr>
+     <th scope="col">ID</th>
+     <th scope="col">Delete</th>
+     <th scope="col">Edit</th>
+     <th scope="col">Title</th>
+     <th scope="col">Latest Price</th>
+     <th scope="col">Old Price</th>
+     <th scope="col">Img</th>
+    </tr>
+   </thead>
+   <tbody>
+    {% for i in data %}
+    <tr>
+     <td>{{ forloop.counter }}</td>
+     <td>
+      <a href="/admin/delete_nosepin_card/?id={{ i.id }}" onclick="return confirm('Are you sure..?')">
+       <i class="bi bi-trash fs-3 text-danger"></i>
+      </a>
+     </td>
+     <td>
+      <a href="/admin/Edit_nosepin_card/?id={{ i.id }}">
+       <i class="bi bi-pencil-square fs-3 text-success"></i>
+      </a>
+     </td>
+     <td>{{ i.productTitle }}</td>
+     <td>{{ i.latestPrice }}</td>
+     <td>{{ i.oldPrice }}</td>
+     <td><img src="/{{ i.productImage }}" alt="Banner Image" width="100px" height="60px" class="border"></td>
+    </tr>
+    {% endfor %}
+   </tbody>
+  </table>
+ </div>
+</div>
+
+{% include 'admin/Footer.html' %}

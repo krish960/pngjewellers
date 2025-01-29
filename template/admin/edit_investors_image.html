@@ -1,0 +1,21 @@
+{% include "admin/Navbar.html" %}
+
+<!-- Form Section with Bootstrap class to make the form responsive and occupy 100% width -->
+<div class="container-fluid mt-5">
+    <h3 class="text-center">Upload Investors  Details</h3>
+    <form action="/admin/update_investors/" method="post" enctype="multipart/form-data" class="w-100 mx-auto">
+        {% csrf_token %}
+        
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <input type="hidden" name="id" value="{{old_investors.id}}">
+                <label class="form-label">Upload Image</label>
+                <input type="file" class="form-control" value="{{old_investors.investors_image}}" name="investors_image">
+            </div>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+    </form>
+</div>
+{% include "admin/Footer.html" %}

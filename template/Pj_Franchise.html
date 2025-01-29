@@ -1,0 +1,126 @@
+{% include "nav.html" %}
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <img src="https://png-devs3.s3.ap-south-1.amazonaws.com/png_franchise_785d18df1c.png" class="img-fluid" alt="Franchise Image">
+    </div>
+
+    <div class="col-md-6">
+      <h1 class="mt-5 ms-5 fw-bold">Why partner with PNG?</h1>
+
+      <div class="d-flex align-items-center mt-5 ms-5">
+        <img 
+          src="https://png-devs3.s3.ap-south-1.amazonaws.com/Group_47043_746cacc3b7.png" 
+          class="me-3" 
+          alt="Trust & Legacy Icon" 
+          style="width: 50px; height: 50px;"
+        >
+        <p class="mb-0 fw-semibold">Trust & Legacy of PNG</p>
+      </div>
+
+      <div class="d-flex align-items-center mt-4 ms-5">
+        <img 
+          src="https://png-devs3.s3.ap-south-1.amazonaws.com/Group_47037_03bfd09dbf.png" 
+          class="me-3" 
+          alt="Strong Brand Icon" 
+          style="width: 50px; height: 50px;"
+        >
+        <p class="mb-0 fw-semibold">Strong Brand Recognition</p>
+      </div>
+
+      <div class="d-flex align-items-center mt-4 ms-5">
+        <img 
+          src="https://png-devs3.s3.ap-south-1.amazonaws.com/Group_47038_57040aaa3b.png" 
+          class="me-3" 
+          alt="Certified Jewellery Icon" 
+          style="width: 50px; height: 50px;"
+        >
+        <p class="mb-0 fw-semibold">Certified Jewellery</p>
+      </div>
+
+      <div class="d-flex align-items-center mt-4 ms-5">
+        <img 
+          src="https://png-devs3.s3.ap-south-1.amazonaws.com/Group_47041_52bd281e11.png" 
+          class="me-3" 
+          alt="Minimum Investment Icon" 
+          style="width: 50px; height: 50px;"
+        >
+        <p class="mb-0 fw-semibold">Minimum Investment</p>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="bg-light p-5 shadow rounded">
+        <h1 class="mb-3">Franchising</h1>
+        <p class="text-muted">Apply for our franchise now and set up your own PNG Jewellers' retail outlet in your area.</p>
+
+
+        <form method="post" action="/save_Pj_Franchise/">
+          {% csrf_token %}
+
+          <div class="mb-3">
+            <label for="firstName" class="form-label">First Name <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="firstName" placeholder="Enter your first name" required name="firstName">
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email" required name="email_address">
+          </div>
+
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number <span class="text-danger">*</span></label>
+            <div class="input-group">
+              <span class="input-group-text">+91</span>
+              <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required name="phone_no">
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="occupation" class="form-label">Occupation</label>
+            <input type="text" class="form-control" id="occupation" placeholder="Enter your occupation" name="occupation">
+          </div>
+
+          <div class="mb-3">
+            <label for="city" class="form-label">City <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="city" placeholder="Enter your city" required name="City_name">
+          </div>
+
+          <div class="mb-3">
+            <label for="pincode" class="form-label">Pincode <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="pincode" placeholder="Enter your pincode" required name="pincodes">
+          </div>
+
+          <div class="mb-3">
+            <label for="investment" class="form-label">Investment Interest <span class="text-danger">*</span></label>
+            <select class="form-select" id="investment" required name="investment">
+              <option value="" selected disabled>Select an option</option>
+              <option value="low">Less than ₹10 lakhs</option>
+              <option value="medium">₹10 lakhs - ₹50 lakhs</option>
+              <option value="high">More than ₹50 lakhs</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100 mt-3">Submit</button>
+        </form>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="custom-hr">
+  <div class="line"></div>
+  <div class="center-logo">
+    <img 
+      src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS4q3a7SokAsnb4OjvSs9xOaCUZyg0HC5nWqBEaN-6Xhj7yYMFK" 
+      alt="Logo" 
+      class="img-fluid"
+    >
+  </div>
+  <div class="line"></div>
+</div>
+
+{% include "footer.html" %}

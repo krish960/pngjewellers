@@ -1,0 +1,154 @@
+{% include "nav.html" %}
+
+
+
+
+
+
+<!-- nav2 end -->
+<div class="container-fluid ">
+   <nav class="breadcrumb">
+      <a href="/">Home</a> &gt; &nbsp;
+   </nav>
+</div>
+
+<div class="d-none d-md-block">
+   <div class="row bg-dark">
+      <div class="col-md-1 d-flex align-items-center justify-content-center option_box text-white">
+         <ion-icon name="options-outline"></ion-icon>
+      </div>
+      <div class="col-md-2 option_box">
+         <div class="dropdown">
+            <button class="dropdown-btn mt-1 button_nav" onclick="toggleDropdown(event)">
+               Price
+               <span style="margin-left: 140px;">
+                  <ion-icon name="chevron-down-outline"></ion-icon>
+               </span>
+            </button>
+            <div class="dropdown-content">
+               <label><input type="checkbox" value="20000"> Less than ₹25,000</label>
+               <label><input type="checkbox" value="25000"> ₹25,001 - ₹30,000</label>
+               <label><input type="checkbox" value="30000"> ₹30,001 and Above</label>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-2 option_box">
+         <div class="dropdown">
+            <button class="dropdown-btn mt-1 button_nav" onclick="toggleDropdown(event)">
+               Collections
+               <span style="margin-left: 90px;">
+                  <ion-icon name="chevron-down-outline"></ion-icon>
+               </span>
+            </button>
+            <div class="dropdown-content">
+               <label><input type="checkbox" value="20000">DiamondDiwaliOffers_100</label>
+               <label><input type="checkbox" value="25000">Diamond365PLUS</label>
+            </div>
+         </div>
+      </div>
+
+      <div class="col-md-2 option_box">
+         <div class="dropdown">
+            <button class="dropdown-btn mt-1 button_nav" onclick="toggleDropdown(event)">
+               Metal type
+               <span style="margin-left: 110px;"> <ion-icon name="chevron-down-outline"></ion-icon></span>
+            </button>
+            <div class="dropdown-content">
+               <label><input type="checkbox" value="20000">yellow gold</label>
+            </div>
+         </div>
+      </div>
+
+      <div class="col-md-2 option_box">
+         <div class="dropdown">
+            <button class="dropdown-btn mt-1 button_nav" onclick="toggleDropdown(event)">occasion
+               <span style="margin-left: 145px;"> <ion-icon name="chevron-down-outline"></ion-icon></span>
+            </button>
+            <div class="dropdown-content">
+               <label><input type="checkbox" value="30000">Daily Wear</label>
+               <label><input type="checkbox" value="30000">Party Wear</label>
+            </div>
+         </div>
+      </div>
+
+      <div class="col-md-3 option_box">
+         <div class="dropdown">
+            <button class="dropdown-btn mt-1 button_nav">
+               <u>More Filters + </u>
+            </button>
+         </div>
+      </div>
+
+   </div>
+</div>
+
+<!-- select box -->
+<div class="d-none d-md-block">
+   <div class="row row-color ">
+      <div class="col-md-8"></div>
+      <div class="col-md-4 d-flex justify-content-center align-items-center">
+         <select class="p-1" style="height: 34px; width: 270px;">
+            <option value="">Sort by</option>
+            <option value="">Popularity</option>
+            <option value="">Newly Listed</option>
+            <option value="">Price - High to Low</option>
+            <option value="">Price - Low to High</option>
+         </select>
+      </div>
+   </div>
+</div>
+
+<!-- Title Section -->
+<div class="container my-4">
+   <h2 class="fw-normal">
+      <u>Dia</u>mond Cufflinks<span class="fw-bold" style="font-size:large;"> 7 Designs</span>
+   </h2>
+</div>
+
+<!-- Product Grid -->
+<div class="container">
+   <div class="row g-4">
+
+
+      <!-- Product Card 1 -->
+      {% for i in data %}
+      <div class="col-6 col-md-3 mb-3">
+         <div class="card border">
+            <div class="like-icon" onclick="toggleLike(this)">
+               <i class="far fa-heart"></i>
+            </div>
+            <img src="/{{i.productImage}}" alt="Zeus Diamond Cufflinks"
+               class="mix-blend-multiply object-contain object-contain absolute h-full w-full inset-0 ">
+            <div class="card-body">
+               <p class="fw-bold">₹{{i.latestPrice}}<span
+                     class="text-muted text-decoration-line-through">₹{{i.oldPrice}}</span>
+               </p>
+               <p class="small text-muted">{{i.productTitle}}</p>
+            </div>
+         </div>
+      </div>
+
+      {% endfor %}
+
+
+
+   </div>
+</div>
+<!-- hr -->
+<div class="custom-hr">
+   <div class="line"></div>
+   <div class="center-logo">
+      <img
+         src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS4q3a7SokAsnb4OjvSs9xOaCUZyg0HC5nWqBEaN-6Xhj7yYMFK"
+         alt="Logo" class="img-fluid">
+   </div>
+   <div class="line"></div>
+</div>
+
+
+
+
+
+
+
+{% include "footer.html" %}

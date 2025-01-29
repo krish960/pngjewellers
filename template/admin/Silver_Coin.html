@@ -1,0 +1,48 @@
+{% include 'admin/Navbar.html' %}
+
+<div class="tag-box">
+  <a href="/admin/pure_silver_chip" class="tag-link">Pure Silver Chip</a>
+  <a href="/admin/silver_laxmi" class="tag-link">Silver Laxmi</a>
+  <a href="/admin/silver_ganesh_coin" class="tag-link">Silver Ganesh Coin</a>
+</div>
+
+{% include 'admin/Footer.html' %}
+
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+
+  .tag-box {
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 700px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+  }
+
+  .tag-link {
+    display: inline-block;
+    margin: 12px;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-size: 16px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+
+  .tag-link:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+  }
+</style>

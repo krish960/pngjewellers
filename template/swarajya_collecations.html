@@ -1,0 +1,202 @@
+{% include "nav.html" %}
+<div class="container-fluide   ">
+  <!-- Image row -->
+  <div class="row">
+    {% for i in banner %}
+    <div class="col-md-12">
+      <div class="row imge-main1 d-none d-md-block">
+
+        <img src="/{{i.collecations_swarajya_Image}}" alt="Banner Image" width="100%">
+
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+
+  <!-- Small navbar1 row -->
+  <div class="row bg-light d-none d-md-block " style="height: 40px;">
+    <div class="col-md-12">
+      <small class="mt-2 ms-3 d-none d-md-block">
+        <a href="index.html" class="no-underline">Home</a>
+        <span class="text-secondary">></span>
+        <a href="" class="no-underline">
+          Collections
+        </a>
+        <span class="text-secondary">></span>
+        <a href="" class="no-underline"> Swarajya Collections</a>
+
+      </small>
+    </div>
+  </div>
+
+  <!-- Small navbar2 row -->
+  <div class="d-none d-md-block">
+    <div class="row bg-dark">
+      <div class="col-md-1 d-flex align-items-center justify-content-center option_box text-white">
+        <ion-icon name="options-outline"></ion-icon>
+      </div>
+      <div class="col-md-2 option_box">
+        <div class="dropdown">
+          <button class="dropdown-btn mt-1 button_nav" onclick="toggleDropdown(event)">
+            Price
+            <span style="margin-left: 140px;">
+              <ion-icon name="chevron-down-outline"></ion-icon>
+            </span>
+          </button>
+          <div class="dropdown-content">
+            <label><input type="checkbox" value="85,000"> Less than ₹85,000
+
+
+            </label>
+            <label><input type="checkbox" value="90,000"> ₹85,001 - ₹90,000</label>
+            <label><input type="checkbox" value="95,000"> ₹90,001 - ₹95,000</label>
+            <label><input type="checkbox" value="1,00,000"> ₹95,001 - ₹1,00,000</label>
+            <label><input type="checkbox" value="1,05,000">
+              ₹1,00,001 - ₹1,05,000</label>
+            <label><input type="checkbox" value="1,10,000"> ₹1,05,001 - ₹1,10,000</label>
+            <label><input type="checkbox" value="1,15,000"> ₹1,10,001 - ₹1,15,000</label>
+            <label><input type="checkbox" value="1,20,000">
+              ₹1,15,001 - ₹1,20,000</label>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-2 option_box">
+        <div class="dropdown">
+          <button class="dropdown-btn mt-1 button_nav" onclick="toggleDropdown(event)">
+            Collections
+            <span style="margin-left: 90px;">
+              <ion-icon name="chevron-down-outline"></ion-icon>
+            </span>
+          </button>
+          <div class="dropdown-content">
+            <label><input type="checkbox" value="20000">
+              Swarajya
+
+            </label>
+            <label><input type="checkbox" value="25000">
+              New Launch
+            </label>
+
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-md-2 option_box">
+        <div class="dropdown">
+          <button class="dropdown-btn mt-1 button_nav" onclick="toggleDropdown(event)">Gifts
+            <span style="margin-left: 145px;"> <ion-icon name="chevron-down-outline"></ion-icon></span>
+          </button>
+          <div class="dropdown-content">
+            <label><input type="checkbox" value="30000">
+              Her
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2 option_box">
+        <div class="dropdown">
+          <button class="dropdown-btn mt-1 button_nav" onclick="toggleDropdown(event)">Matarial
+            <span style="margin-left: 145px;"> <ion-icon name="chevron-down-outline"></ion-icon></span>
+          </button>
+          <div class="dropdown-content">
+            <label><input type="checkbox" value="30000">
+              Gold
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 option_box">
+        <div class="dropdown">
+          <button class="dropdown-btn mt-1 button_nav">
+            <u>More Filters + </u>
+          </button>
+
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- select box -->
+  <div class="d-none d-md-block">
+    <div class="row row-color ">
+      <div class="col-md-8"></div>
+      <div class="col-md-4 d-flex justify-content-center align-items-center">
+        <select class="p-1" style="height: 34px; width: 270px;">
+          <option value="">Sort by</option>
+          <option value="">Popularity</option>
+          <option value="">Newly Listed</option>
+          <option value="">Price - High to Low</option>
+          <option value="">Price - Low to High</option>
+        </select>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>
+
+
+</div>
+
+<!-- cart start -->
+<div class="container mb-3">
+  <!-- Card section start -->
+  <div class="row p-2">
+    <div class="col-md-12 mt-3">
+      <span class="text-dimond ms-2 d-none d-md-block" style="font-weight: 50;">All Jewellery <span
+          style="font-weight: 490; font-size: 27px;"> 13 Designs </span></span>
+
+
+      <span class="text-dimond1   ms-2 d-block d-md-none" style="font-weight: 10;">
+        All Jewellery<span style="font-weight: 490; font-size: 23px;">13 Designs</span>
+
+        <hr>
+      </span>
+
+    </div>
+  </div>
+  <!-- first row Cards -->
+  <div class="row py-4">
+    <!-- Card 1 -->
+    {% for i in ollecations_swarajya %}
+    <div class="col-6 col-md-3  mb-3">
+      <div class="product-card1">
+        <div class="like-icon" onclick="toggleLike(this)">
+          <i class="far fa-heart"></i>
+        </div>
+        <img src="/{{i.ollecations_swarajya_image}}">
+        <div class="card-content mt-0 p-3">
+          <span class="price">₹{{i.ollecations_swarajya_Latest_price}}</span>
+          <span class="original-price">₹{{i.ollecations_swarajya_old_price}}</span>
+          <p>{{i.ollecations_swarajya_Description}}</p>
+
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+</div>
+
+</div>
+<!-- hr -->
+<div class="custom-hr">
+  <div class="line"></div>
+  <div class="center-logo">
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS4q3a7SokAsnb4OjvSs9xOaCUZyg0HC5nWqBEaN-6Xhj7yYMFK"
+      alt="Logo" class="img-fluid">
+  </div>
+  <div class="line"></div>
+</div>
+
+{% include "footer.html" %}

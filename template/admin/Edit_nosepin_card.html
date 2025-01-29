@@ -1,0 +1,74 @@
+{% include 'admin/Navbar.html' %}
+
+<div class="container my-5">
+ <div class="row justify-content-center">
+  <div class="col-lg-6 col-md-8 col-sm-12">
+   <div class="card shadow border-0 rounded-3">
+    <div class="card-body p-4">
+     <h3 class="text-center mb-4 text-primary fw-bold">Edit Product Details</h3>
+
+     <form action="/admin/edit_nosepin_card_da/" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input type="hidden" name="id" value="{{ old_Data.id }}">
+
+      <!-- Current Image -->
+      <div class="mb-4 text-center">
+       <label for="cardImage" class="form-label fw-semibold">Current Image</label>
+       <div class="mb-3">
+        <img src="{{ old_Data.productImage.url }}" alt="Current Image" class="img-thumbnail"
+         style="max-width: 150px; border: 2px solid #ddd;">
+       </div>
+      </div>
+
+      <!-- Select New Image -->
+      <div class="mb-4">
+       <label for="cardImage" class="form-label fw-semibold">Select New Image</label>
+       <div class="input-group">
+        <span class="input-group-text"><i class="bi bi-image"></i></span>
+        <input type="file" class="form-control shadow-sm" id="cardImage" name="cardImage_edit" accept="image/*"
+         required>
+       </div>
+      </div>
+
+      <!-- Image Title -->
+      <div class="mb-4">
+       <label for="imgTitle" class="form-label fw-semibold">Image Title</label>
+       <div class="input-group">
+        <span class="input-group-text"><i class="bi bi-card-text"></i></span>
+        <input type="text" class="form-control shadow-sm" id="imgTitle" name="imgTitle_edit"
+         value="{{ old_Data.productTitle }}" placeholder="Enter image title" required>
+       </div>
+      </div>
+
+      <!-- Latest Price -->
+      <div class="mb-4">
+       <label for="latestPrice" class="form-label fw-semibold">Latest Price</label>
+       <div class="input-group">
+        <span class="input-group-text"><i class="bi bi-currency-dollar"></i></span>
+        <input type="number" class="form-control shadow-sm" id="latestPrice" name="latestPrice_edit"
+         value="{{ old_Data.latestPrice }}" placeholder="Enter latest price" required>
+       </div>
+      </div>
+
+      <!-- Old Price -->
+      <div class="mb-4">
+       <label for="oldPrice" class="form-label fw-semibold">Old Price</label>
+       <div class="input-group">
+        <span class="input-group-text"><i class="bi bi-tag"></i></span>
+        <input type="number" class="form-control shadow-sm" id="oldPrice" name="oldPrice_edit"
+         value="{{ old_Data.oldPrice }}" placeholder="Enter old price">
+       </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="text-center">
+       <button type="submit" class="btn btn-primary btn-lg px-4 py-2 shadow-sm rounded-pill">Update</button>
+      </div>
+     </form>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+
+{% include 'admin/Footer.html' %}

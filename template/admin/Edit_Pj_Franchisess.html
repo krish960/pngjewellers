@@ -1,0 +1,103 @@
+{% include 'admin/Navbar.html' %}
+
+<style>
+    .form-container {
+        width: 60%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .form-table {
+        width: 100%;
+        margin-bottom: 20px;
+        border-collapse: collapse;
+    }
+
+    .form-table th {
+        text-align: left;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .form-table td {
+        padding: 10px;
+    }
+
+    .form-input {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+    }
+
+    .form-input:focus {
+        outline: none;
+        border-color: #007bff;
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .submit-btn:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<form action="/admin/update_pg_franchiess/" method="post" class="form-container">
+    {% csrf_token %}
+    
+    <h2>Update Franchisee Information</h2>
+    <input type="hidden" name="id" value="{{ old_data.id }}">
+    
+    <table class="form-table">
+        <tr>
+            <th>Name</th>
+            <td><input type="text" name="name" required class="form-input" name="firstName" value="{{old_data.firstName}}"></td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td><input type="email" name="email" required class="form-input" name="email_address" value="{{old_data.email_address}}"></td>
+        </tr>
+        <tr>
+            <th>Phone</th>
+            <td><input type="tel" name="phone" required class="form-input" name="phone_no" value="{{old_data.phone_no}}"></td>
+        </tr>
+        <tr>
+            <th>Occupation</th>
+            <td><input type="text" name="occupation" required class="form-input" name="occupation" value="{{old_data.occupation}}"></td>
+        </tr>
+        <tr>
+            <th>City</th>
+            <td><input type="text" name="city" required class="form-input" name="City_name" value="{{old_data.City_name}}"></td>
+        </tr>
+        <tr>
+            <th>Pincode</th>
+            <td><input type="text" name="pincode" required class="form-input" name="pincodes" value="{{old_data.pincodes}}"></td>
+        </tr>
+        <tr>
+            <th>Investment Interest *</th>
+            <td><input type="text" name="investment_interest" required class="form-input" name="investment" value="{{old_data.investment}}"></td>
+        </tr>
+    </table>
+
+    <button type="submit" class="submit-btn">Submit</button>
+</form>
+
+{% include 'admin/Footer.html' %}

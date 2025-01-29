@@ -1,0 +1,82 @@
+{% include "admin/Navbar.html" %}
+<style>
+    .box-shadow {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+        border-radius: 5px;
+        padding: 15px; 
+        background-color: #fff; 
+    }
+</style>
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Add Store_Locator</h1>
+    <form action="/admin/index_Store_Locator/" method="post" enctype="multipart/form-data" class="box-shadow">
+        {% csrf_token %}
+
+        <div class="row">
+            <!-- Image Upload -->
+            <div class="mb-3 col-md-6">
+                <label for="image" class="form-label">Add Image</label>
+                <input type="file" class="form-control" id="image" name="Store_Locator_img">
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="price" class="form-label">Add Heiding</label>
+                <input type="text" class="form-control" id="price" name="Store_Locator_Heiding" step="0.01" placeholder="Enter Text">
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="price" class="form-label">Add Description</label>
+                <input type="text" class="form-control" id="price" name="Store_Locator_Description" step="0.01" placeholder="Enter Text">
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Save </button>
+        </div>
+    </form>
+
+<table class="table table-striped table-bordered mt-5">
+    <thead class="table-dark">
+        <tr>
+            <th>Delete</th>
+            <th>Edit</th>
+            <th>Image</th>
+            <th>Heiding</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in store_Locator %}
+        <tr>
+            <td>
+                <a href="/admin/delete_Store_Locator/?id={{ i.id }}" >
+                            <i class="fa fa-trash text-danger"></i>
+               
+            </td>
+            <td>
+                 <a href="/admin/edit_Store_Locator/?id={{i.id}}">
+                            <i class="fa fa-edit"></i>
+                           
+                </a>
+            </td>
+            <td>
+                <img src="/{{i.Store_Locator_img}}" width="50px">
+            </td>
+            <td>{{i.Store_Locator_Heiding}}</td>
+            <td>{{ i.Store_Locator_Description }}</td>
+
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4" class="text-center">No items found.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+
+{% include "admin/Footer.html" %}
+
+
+
